@@ -1,4 +1,4 @@
-package com.poli.bigdata.persistencia
+package com.poli.bigdata.persistencia.config
 
 import java.sql.DriverManager
 
