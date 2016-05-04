@@ -1,19 +1,25 @@
 package com.poli.bigdata
 
-import akka.actor.ActorSystem
-import akka.io.IO
-import akka.util.Timeout
-import spray.can.Http
-import akka.pattern.ask
-import scala.concurrent.duration._
+import com.poli.bigdata.notificaciones.email.NotifiacionesCorreoServicio
+import com.poli.bigdata.persistencia.daos.DatosFiltradosEstudiantesDAO
+import com.poli.bigdata.tareas.ProcesamientoMatriculados
+import com.typesafe.scalalogging.LazyLogging
 
-object Boot extends App {
 
-  implicit val timeout = Timeout( 50.seconds )
+import scala.util.{Failure, Success}
 
-  implicit val system = ActorSystem( "ETL-InitData" )
-//  val orchestrator = system.actorOf( QuizServiceActor.props, "quiz-amapola-service" )
-//  val host = "0.0.0.0"
-//  val port = Option( System.getenv( "PORT" ) ).getOrElse( "8080" )
-//  IO( Http ) ? Http.Bind( orchestrator, interface = host, port = port.toInt )
+object Boot extends App with LazyLogging{
+
+  val notificaciones = new NotifiacionesCorreoServicio()
+  val procesamientoMatriculadosDAO = new DatosFiltradosEstudiantesDAO
+  val procesamientoMatriculados = new ProcesamientoMatriculados(notificaciones, procesamientoMatriculadosDAO)
+
+  val archivo = "matriculados.csv"
+
+  procesamientoMatriculados.procesarDatosMatriculados(archivo) onComplete {
+    case Success(e) =>
+      logger.debug("Datos de matriculados cargados correctamente")
+    case Failure(ex) =>
+      logger.error("Error cargando los datos", ex)
+  }
 }

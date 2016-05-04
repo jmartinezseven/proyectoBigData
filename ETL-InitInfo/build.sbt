@@ -65,7 +65,9 @@ libraryDependencies ++= Seq(
   "com.softwaremill.macwire"        %%  "runtime"                             % "1.0.1" withSources(),
   "mysql"                           % "mysql-connector-java"                  % "6.0.2",
   "com.google.code.gson"            % "gson"                                  % "1.7.1",
-  "com.enragedginger"               %% "akka-quartz-scheduler"                % "1.5.0-akka-2.4.x"
+  "com.enragedginger"               %% "akka-quartz-scheduler"                % "1.5.0-akka-2.4.x",
+  "ch.qos.logback"                  %  "logback-classic"                      % "1.1.7",
+  "javax.mail"                      %  "mail"                                  % "1.4.1"
 )
 
 jarName in assembly := "etlInitInfo"
