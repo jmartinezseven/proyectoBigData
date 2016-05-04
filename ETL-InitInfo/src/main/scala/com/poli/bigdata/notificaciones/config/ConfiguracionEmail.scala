@@ -6,7 +6,7 @@ import javax.mail.Session;
 
 object ConfiguracionEmail {
 
-  val props = new Properties()();
+  val props = new Properties();
   props.setProperty("mail.smtp.host", "smtp.gmail.com");
   props.setProperty("mail.smtp.starttls.enable", "true");
   props.setProperty("mail.smtp.port","587");

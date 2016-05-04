@@ -5,6 +5,7 @@ import com.poli.bigdata.persistencia.daos.DatosFiltradosEstudiantesDAO
 import com.poli.bigdata.tareas.ProcesamientoMatriculados
 import com.typesafe.scalalogging.LazyLogging
 
+import scala.concurrent.ExecutionContext.Implicits.global
 
 import scala.util.{Failure, Success}
 

@@ -35,7 +35,7 @@ trait Auditable {
     dao.insertarRegistro(entidad)
   }
 
-  def enviarNotificacion(proceso: String, mensaje: String)
+  def enviarNotificacion(proceso: String, mensaje: String) : Unit
 
 }
 
