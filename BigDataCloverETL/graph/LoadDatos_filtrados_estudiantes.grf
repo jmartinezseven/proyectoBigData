@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Carlos" created="Thu May 05 21:17:21 COT 2016" guiVersion="4.1.3" id="1462501733456" licenseCode="CLP1DNONEX86645084EX" licenseType="Evaluation" modified="Thu May 05 21:17:21 COT 2016" modifiedBy="Carlos" name="LoadDatos_filtrados_estudiantes" revision="1.0" showComponentDetails="true">
+<Global>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+</Graph>
