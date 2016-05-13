@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="jsmartinez" created="Fri May 13 00:26:37 COT 2016" guiVersion="4.1.3" id="1463119488208" licenseCode="CLP1DSEVEN58088402EX" licenseType="Evaluation" modified="Fri May 13 01:23:16 COT 2016" modifiedBy="jsmartinez" name="mentiritas" revision="1.1" showComponentDetails="true">
+<Global>
+<MetadataGroup name="Implicit metadata" type="implicit">
+<Metadata id="__static_metadata_VALIDATOR_Validator_InvalidRecords">
+<Record fieldDelimiter="|" name="Validator_ValidationResult" recordDelimiter="\n" type="delimited">
+<Field name="recordNo" trim="true" type="long"/>
+<Field name="validationMessage" type="string"/>
+<Field name="ruleStatusCode" trim="true" type="integer"/>
+<Field name="ruleName" type="string"/>
+<Field name="ruleType" type="string"/>
+<Field containerType="list" name="rulePath" type="string"/>
+<Field containerType="list" name="validatedFieldNames" type="string"/>
+<Field containerType="map" name="validatedValues" type="string"/>
+<Field containerType="map" name="ruleParameters" type="string"/>
+<Field name="validationDate" trim="true" type="date"/>
+<Field name="componentID" type="string"/>
+<Field name="componentName" type="string"/>
+<Field name="graphURL" type="string"/>
+</Record>
+</Metadata>
+</MetadataGroup>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node guiName="DataGenerator" guiX="814" guiY="358" id="DATA_GENERATOR" type="DATA_GENERATOR"/>
+<Node guiName="DataGenerator" guiX="821" guiY="602" id="DATA_GENERATOR1" type="DATA_GENERATOR"/>
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="1791" guiY="358" id="DBOUTPUT_TABLE1" type="DB_OUTPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_94b598c4e735470\`.\`matriculados\` (\`id\`, \`base_codPrimiparoPoli\`, \`base_PrimiparoPoli\`, \`base_idAnho\`, \`base_idPeriodo\`, \`base_UsuarioAppInscripcion\`, \`base_AppInscripcion\`, \`datp_NumeroDocumento\`, \`datp_NombresCompletos\`, \`datp_Nombres\`, \`datp_Apellido1\`, \`datp_Apellido2\`, \`datp_direccionResidencia\`, \`datp_TelefonoPrincipal\`, \`datp_correoElectronico\`, \`datp_Genero\`, \`datp_Celular\`, \`datp_TipoIdentificacion\`, \`datp_idCiudad\`, \`datp_Ciudad\`, \`datp_Trabaja\`, \`datp_NombreEmpresa\`, \`datp_TelefonoEmpresa\`, \`datp_DireccionEmpresa\`, \`acad_Movilidad\`, \`acad_anhoPeriodo\`, \`acad_codigoEstudiante\`, \`acad_IdJornada\`, \`acad_Jornada\`, \`acad_idPrograma\`, \`acad_Programa\`, \`acad_idNivel\`, \`acad_Nivel\`, \`acad_CohorteIngreso\`, \`acad_Semestre\`, \`acad_idSede\`, \`acad_sede\`, \`acad_idEstadoAcademico\`, \`acad_EstadoAcademico\`, \`acad_consecutivoWEB\`, \`acad_Titulo\`, \`acad_idTipoSede\`, \`acad_TipoSede\`, \`acad_idFacultad\`, \`acad_Facultad\`, \`acad_idCSU\`, \`acad_CSU\`, \`acad_IdTipoDeCSU\`, \`acad_TipoDeCSU\`, \`acad_ZonaDeVenta\`, \`acad_FechaOferta\`, \`acad_otraUniversidad\`, \`acad_Anho\`, \`acad_SNIES\`, \`acad_UnidadOperativa\`, \`finan_numeroReciboPago\`, \`finan_valorMatricula\`, \`finan_valorOrdinario\`, \`finan_valorExtraOrdinario\`, \`finan_DiferenciaValoresMatricula\`, \`finan_PagoExtraordinario\`, \`finan_MedioPago\`, \`finan_FechaPago\`, \`finan_EntidadBancaria\`, \`finan_ValorPagado\`, \`finan_idEstadoFinanciero\`, \`finan_Estadofinanciero\`, \`finan_SemanaMatricula\`, \`finana_MediaMatricula\`, \`finan_descuento\`, \`Gmail\`, \`Reintegro\`)
+VALUES ($id, $base_codPrimiparoPoli, $base_PrimiparoPoli, $base_idAnho, $base_idPeriodo, $base_UsuarioAppInscripcion, $base_AppInscripcion, $datp_NumeroDocumento, $datp_NombresCompletos, $datp_Nombres, $datp_Apellido1, $datp_Apellido2, $datp_direccionResidencia, $datp_TelefonoPrincipal, $datp_correoElectronico, $datp_Genero, $datp_Celular, $datp_TipoIdentificacion, $datp_idCiudad, $datp_Ciudad, $datp_Trabaja, $datp_NombreEmpresa, $datp_TelefonoEmpresa, $datp_DireccionEmpresa, $acad_Movilidad, $acad_anhoPeriodo, $acad_codigoEstudiante, $acad_IdJornada, $acad_Jornada, $acad_idPrograma, $acad_Programa, $acad_idNivel, $acad_Nivel, $acad_CohorteIngreso, $acad_Semestre, $acad_idSede, $acad_sede, $acad_idEstadoAcademico, $acad_EstadoAcademico, $acad_consecutivoWEB, $acad_Titulo, $acad_idTipoSede, $acad_TipoSede, $acad_idFacultad, $acad_Facultad, $acad_idCSU, $acad_CSU, $acad_IdTipoDeCSU, $acad_TipoDeCSU, $acad_ZonaDeVenta, $acad_FechaOferta, $acad_otraUniversidad, $acad_Anho, $acad_SNIES, $acad_UnidadOperativa, $finan_numeroReciboPago, $finan_valorMatricula, $finan_valorOrdinario, $finan_valorExtraOrdinario, $finan_DiferenciaValoresMatricula, $finan_PagoExtraordinario, $finan_MedioPago, $finan_FechaPago, $finan_EntidadBancaria, $finan_ValorPagado, $finan_idEstadoFinanciero, $finan_Estadofinanciero, $finan_SemanaMatricula, $finana_MediaMatricula, $finan_descuento, $Gmail, $Reintegro)]]></attr>
+</Node>
+<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="1639" guiY="564" id="DBOUTPUT_TABLE2" type="DB_OUTPUT_TABLE"/>
+<Node guiName="Validator" guiX="1460" guiY="571" id="DatosEstudiantesValidator" type="VALIDATOR">
+<attr name="errorMapping"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.1.recordNo = $in.1.recordNo;
+	$out.1.validationMessage = $in.1.validationMessage;
+	$out.1.componentID = $in.1.componentID;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="rules"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<group conjunction="AND" description="" enabled="true" errorMessage="" errorMessageProducer="RULES" lazyEvaluation="true" name="All rules" statusCode="">
+    <children>
+        <copyAllByName customRejectMessage="" description="" enabled="true" inputField="" name="Copy all fields by name" outputField=""/>
+    </children>
+    <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+    <imports/>
+</group>
+]]></attr>
+</Node>
+<Node guiName="Loop" guiX="1047" guiY="358" id="LOOP" type="LOOP">
+<attr name="whileCondition"><![CDATA[//#CTL2
+true]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="1629" guiY="420" id="REFORMAT1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.base_codPrimiparoPoli = long2integer($in.0.base_codPrimiparoPoli);
+	$out.0.base_PrimiparoPoli = $in.0.base_PrimiparoPoli;
+	$out.0.base_idAnho = toString($in.0.base_idAnho);
+	$out.0.base_idPeriodo = long2integer($in.0.base_idPeriodo);
+	$out.0.base_UsuarioAppInscripcion = $in.0.base_UsuarioAppInscripcion;
+	$out.0.base_AppInscripcion = $in.0.base_AppInscripcion;
+	$out.0.datp_NumeroDocumento = toString($in.0.datp_NumeroDocumento);
+	$out.0.datp_NombresCompletos = $in.0.datp_NombresCompletos;
+	$out.0.datp_Nombres = $in.0.datp_Nombres;
+	$out.0.datp_Apellido1 = $in.0.datp_Apellido1;
+	$out.0.datp_Apellido2 = $in.0.datp_Apellido2;
+	$out.0.datp_direccionResidencia = $in.0.datp_direccionResidencia;
+	$out.0.datp_TelefonoPrincipal = $in.0.datp_TelefonoPrincipal;
+	$out.0.datp_correoElectronico = $in.0.datp_correoElectronico;
+	$out.0.datp_Genero = $in.0.datp_Genero;
+	$out.0.datp_Celular = toString($in.0.datp_Celular);
+	$out.0.datp_TipoIdentificacion = $in.0.datp_TipoIdentificacion;
+	$out.0.datp_idCiudad = toString($in.0.datp_idCiudad);
+	$out.0.datp_Ciudad = $in.0.datp_Ciudad;
+	$out.0.datp_Trabaja = num2bool($in.0.datp_Trabaja);
+	$out.0.datp_NombreEmpresa = $in.0.datp_NombreEmpresa;
+	$out.0.datp_TelefonoEmpresa = toString($in.0.datp_TelefonoEmpresa);
+	$out.0.datp_DireccionEmpresa = $in.0.datp_DireccionEmpresa;
+	$out.0.acad_Movilidad = toString($in.0.acad_Movilidad);
+	$out.0.acad_anhoPeriodo = toString($in.0.acad_anhoPeriodo);
+	$out.0.acad_codigoEstudiante = toString($in.0.acad_codigoEstudiante);
+	$out.0.acad_IdJornada = long2integer($in.0.acad_IdJornada);
+	$out.0.acad_Jornada = $in.0.acad_Jornada;
+	$out.0.acad_idPrograma = long2integer($in.0.acad_idPrograma);
+	$out.0.acad_Programa = $in.0.acad_Programa;
+	$out.0.acad_idNivel = long2integer($in.0.acad_idNivel);
+	$out.0.acad_Nivel = $in.0.acad_Nivel;
+	$out.0.acad_CohorteIngreso = toString($in.0.acad_CohorteIngreso);
+	$out.0.acad_Semestre = long2integer($in.0.acad_Semestre);
+	$out.0.acad_idSede = long2integer($in.0.acad_idSede);
+	$out.0.acad_sede = str2integer($in.0.acad_sede);
+	$out.0.acad_idEstadoAcademico = toString($in.0.acad_idEstadoAcademico);
+	$out.0.acad_EstadoAcademico = str2integer($in.0.acad_EstadoAcademico);
+	$out.0.acad_consecutivoWEB = toString($in.0.acad_consecutivoWEB);
+	$out.0.acad_Titulo = $in.0.acad_Titulo;
+	$out.0.acad_idTipoSede = long2integer($in.0.acad_idTipoSede);
+	$out.0.acad_TipoSede = $in.0.acad_TipoSede;
+	$out.0.acad_idFacultad = long2integer($in.0.acad_idFacultad);
+	$out.0.acad_Facultad = $in.0.acad_Facultad;
+	$out.0.acad_idCSU = str2integer($in.0.acad_idCSU);
+	$out.0.acad_CSU = $in.0.acad_CSU;
+	$out.0.acad_IdTipoDeCSU = $in.0.acad_IdTipoDeCSU;
+	$out.0.acad_TipoDeCSU = $in.0.acad_TipoDeCSU;
+	$out.0.acad_ZonaDeVenta = $in.0.acad_ZonaDeVenta;
+	$out.0.acad_FechaOferta = $in.0.acad_FechaOferta;
+	$out.0.acad_otraUniversidad = toString($in.0.acad_otraUniversidad);
+	$out.0.acad_Anho = long2integer($in.0.acad_Anho);
+	$out.0.acad_SNIES = toString($in.0.acad_SNIES);
+	$out.0.acad_UnidadOperativa = $in.0.acad_UnidadOperativa;
+	$out.0.finan_numeroReciboPago = toString($in.0.finan_numeroReciboPago);
+	$out.0.finan_valorMatricula = toString($in.0.finan_valorMatricula);
+	$out.0.finan_valorOrdinario = toString($in.0.finan_valorOrdinario);
+	$out.0.finan_valorExtraOrdinario = toString($in.0.finan_valorExtraOrdinario);
+	$out.0.finan_DiferenciaValoresMatricula = toString($in.0.finan_DiferenciaValoresMatricula);
+	$out.0.finan_PagoExtraordinario = toString($in.0.finan_PagoExtraordinario);
+	$out.0.finan_MedioPago = $in.0.finan_MedioPago;
+	$out.0.finan_FechaPago = $in.0.finan_FechaPago;
+	$out.0.finan_EntidadBancaria = $in.0.finan_EntidadBancaria;
+	$out.0.finan_ValorPagado = toString($in.0.finan_ValorPagado);
+	$out.0.finan_idEstadoFinanciero = long2integer($in.0.finan_idEstadoFinanciero);
+	$out.0.finan_Estadofinanciero = $in.0.finan_Estadofinanciero;
+	$out.0.finan_SemanaMatricula = toString($in.0.finan_SemanaMatricula);
+	$out.0.finana_MediaMatricula = toString($in.0.finana_MediaMatricula);
+	$out.0.finan_descuento = toString($in.0.finan_descuento);
+	$out.0.Gmail = $in.0.Gmail;
+	$out.0.Reintegro = toString($in.0.Reintegro);
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node delay="5000" guiName="Sleep" guiX="1030" guiY="602" id="SLEEP" type="SLEEP"/>
+<Node dataPolicy="strict" fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="SpreadsheetDataReader" guiX="1202" guiY="435" id="SPREADSHEET_DATA_READER2" sheet="MAtriculados_II_Final" type="SPREADSHEET_READER"/>
+<Node guiName="Success" guiX="1228" guiY="299" id="SUCCESS" type="SUCCESS"/>
+<Edge fromNode="DATA_GENERATOR:0" guiBendpoints="" guiRouter="Manhattan" id="Edge15" inPort="Port 0 (input token)" outPort="Port 0 (out)" toNode="LOOP:0"/>
+<Edge fromNode="DATA_GENERATOR1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge14" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="SLEEP:0"/>
+<Edge fromNode="DatosEstudiantesValidator:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (in)" outPort="Port 0 (valid)" toNode="REFORMAT1:0"/>
+<Edge fromNode="DatosEstudiantesValidator:1" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" outPort="Port 1 (invalid)" persistedImplicitMetadata="__static_metadata_VALIDATOR_Validator_InvalidRecords" toNode="DBOUTPUT_TABLE2:0"/>
+<Edge fromNode="LOOP:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" outPort="Port 0 (end of loop)" toNode="SUCCESS:0"/>
+<Edge fromNode="LOOP:1" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (input)" outPort="Port 1 (continue loop)" toNode="SPREADSHEET_DATA_READER2:0"/>
+<Edge fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge11" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE1:0"/>
+<Edge fromNode="SLEEP:0" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 1 (back from loop)" outPort="Port 0 (out)" toNode="LOOP:1"/>
+<Edge fromNode="SPREADSHEET_DATA_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" outPort="Port 0 (output)" toNode="DatosEstudiantesValidator:0"/>
+</Phase>
+</Graph>
