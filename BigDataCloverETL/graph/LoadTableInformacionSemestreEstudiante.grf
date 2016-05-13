@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Graph author="Carlos" created="Wed May 04 00:55:07 COT 2016" guiVersion="4.1.3" id="1462343744498" licenseCode="CLP1DNONEX86645084EX" licenseType="Evaluation" modified="Thu May 05 22:08:07 COT 2016" modifiedBy="Carlos" name="LoadTableInformacionSemestreEstudiante" revision="1.5" showComponentDetails="true">
+<Graph author="Carlos" created="Wed May 04 00:55:07 COT 2016" guiVersion="4.1.3" id="1462343744498" licenseCode="CLP1DSEVEN58088402EX" licenseType="Evaluation" modified="Thu May 12 00:40:04 COT 2016" modifiedBy="jsmartinez" name="LoadTableInformacionSemestreEstudiante" revision="1.36" showComponentDetails="true">
 <Global>
 <Metadata id="Metadata3">
 <Record fieldDelimiter=";" name="datos_filtrados_estudiantes" recordDelimiter="\n" type="delimited">
@@ -44,21 +44,40 @@
 </Metadata>
 <Metadata id="Metadata2">
 <Record fieldDelimiter="|" name="test_test" recordDelimiter="\r\n" type="delimited">
-<Field format="" label=" id_estudiante" name="id_estudiante" type="long"/>
-<Field format="" label=" primer_nombre" name="primer_nombre" type="string"/>
-<Field format="" label=" segundo_nombre" name="segundo_nombre" type="string"/>
-<Field format="" label=" primer_apellido" name="primer_apellido" type="string"/>
-<Field format="" label=" segundo_apellido" name="segundo_apellido" type="string"/>
+<Field label=" id_estudiante" name="id_estudiante" type="long"/>
+<Field label=" primer_nombre" name="primer_nombre" type="string"/>
+<Field label=" segundo_nombre" name="segundo_nombre" type="string"/>
+<Field label=" primer_apellido" name="primer_apellido" type="string"/>
+<Field label=" segundo_apellido" name="segundo_apellido" type="string"/>
 <Field format="excel:m/d/yy" label=" fecha_nacimiento" name="fecha_nacimiento" type="date"/>
-<Field format="" label=" estado_civil" name="estado_civil" type="string"/>
-<Field format="" label=" estrato" name="estrato" type="long"/>
-<Field format="" label=" becado" name="becado" type="string"/>
-<Field format="" label=" sexo" name="sexo" type="string"/>
-<Field format="" label=" trabaja_actualmente" name="trabaja_actualmente" type="string"/>
+<Field label=" estado_civil" name="estado_civil" type="string"/>
+<Field label=" estrato" name="estrato" type="long"/>
+<Field label=" becado" name="becado" type="string"/>
+<Field label=" sexo" name="sexo" type="string"/>
+<Field label=" trabaja_actualmente" name="trabaja_actualmente" type="string"/>
 <Field format="excel:m/d/yy" label=" fecha_ingreso_universidad" name="fecha_ingreso_universidad" type="date"/>
 <Field format="excel:m/d/yy" label=" fecha_graduacion_universidadl" name="fecha_graduacion_universidadl" type="date"/>
 </Record>
 </Metadata>
+<MetadataGroup name="Implicit metadata" type="implicit">
+<Metadata id="__static_metadata_VALIDATOR_Validator_InvalidRecords">
+<Record fieldDelimiter="|" name="Validator_ValidationResult" recordDelimiter="\n" type="delimited">
+<Field name="recordNo" trim="true" type="long"/>
+<Field name="validationMessage" type="string"/>
+<Field name="ruleStatusCode" trim="true" type="integer"/>
+<Field name="ruleName" type="string"/>
+<Field name="ruleType" type="string"/>
+<Field containerType="list" name="rulePath" type="string"/>
+<Field containerType="list" name="validatedFieldNames" type="string"/>
+<Field containerType="map" name="validatedValues" type="string"/>
+<Field containerType="map" name="ruleParameters" type="string"/>
+<Field name="validationDate" trim="true" type="date"/>
+<Field name="componentID" type="string"/>
+<Field name="componentName" type="string"/>
+<Field name="graphURL" type="string"/>
+</Record>
+</Metadata>
+</MetadataGroup>
 <Connection database="MYSQL" dbURL="jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_94b598c4e735470" id="JDBC0" jdbcSpecific="MYSQL" name="Mysql" password="9b47547f" type="JDBC" user="bfd0a3a906a8e3"/>
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>
@@ -66,15 +85,63 @@
 <Dictionary/>
 </Global>
 <Phase number="0">
-<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="590" guiY="141" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="702" guiY="584" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_94b598c4e735470\`.\`informaciom_semestre_estudiante\` (\`id\`, \`id_estudiante\`, \`anio\`, \`periodo\`, \`materia\`, \`nota_primer_corte\`, \`nota_segundo_corte\`, \`nota_tercer_corte\`)
 VALUES ($id, $id_estudiante, $anio, $periodo, $materia, $nota_primer_corte, $nota_segundo_corte, $nota_tercer_corte)]]></attr>
 </Node>
-<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="607" guiY="41" id="DBOUTPUT_TABLE1" type="DB_OUTPUT_TABLE">
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="960" guiY="92" id="DBOUTPUT_TABLE1" type="DB_OUTPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_94b598c4e735470\`.\`datos_filtrados_estudiantes\` (\`id\`, \`id_estudiante\`, \`primer_nombre\`, \`segundo_nombre\`, \`primer_apellido\`, \`segundo_apellido\`, \`fecha_nacimiento\`, \`estado_civil\`, \`estrato\`, \`becado\`, \`sexo\`, \`trabaja_actualmente\`, \`fecha_ingreso_universidad\`, \`fecha_graduacion_universidadl\`)
 VALUES ($id, $id_estudiante, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $fecha_nacimiento, $estado_civil, $estrato, $becado, $sexo, $trabaja_actualmente, $fecha_ingreso_universidad, $fecha_graduacion_universidadl)]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="397" guiY="141" id="REFORMAT" type="REFORMAT">
+<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="702" guiY="261" id="DBOUTPUT_TABLE2" type="DB_OUTPUT_TABLE"/>
+<Node guiName="Validator" guiX="389" guiY="142" id="DatosEstudiantesValidator" type="VALIDATOR">
+<attr name="errorMapping"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.1.recordNo = $in.1.recordNo;
+	$out.1.validationMessage = $in.1.validationMessage;
+	$out.1.componentID = $in.1.componentID;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="rules"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<group conjunction="AND" description="" enabled="true" errorMessage="" errorMessageProducer="RULES" lazyEvaluation="true" name="All rules" statusCode="">
+    <children>
+        <copyAllByName customRejectMessage="" description="" enabled="true" inputField="" name="Copy all fields by name" outputField=""/>
+        <stringLength acceptEmpty="false" customRejectMessage="" description="" enabled="true" inputField="sexo" max="1" min="" name="String Length" outputField="" trimInput="false">
+            <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+        </stringLength>
+    </children>
+    <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+    <imports/>
+</group>
+]]></attr>
+</Node>
+<Node guiName="Loop" guiX="216" guiY="92" id="LOOP" type="LOOP">
+<attr name="whileCondition"><![CDATA[//#CTL2
+true]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="399" guiY="584" id="REFORMAT" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
@@ -109,7 +176,7 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="397" guiY="41" id="REFORMAT1" type="REFORMAT">
+<Node guiName="Reformat" guiX="702" guiY="92" id="REFORMAT1" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
@@ -150,11 +217,20 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Node fileURL="D:/bigdata/proyectoBigData/test.xls" guiName="SpreadsheetDataReader" guiX="126" guiY="141" id="SPREADSHEET_DATA_READER" sheet="Hoja1" type="SPREADSHEET_READER"/>
-<Node fileURL="D:/bigdata/proyectoBigData/test.xls" guiName="SpreadsheetDataReader" guiX="126" guiY="41" id="SPREADSHEET_DATA_READER1" sheet="test" type="SPREADSHEET_READER"/>
+<Node delay="5000" guiName="Sleep" guiX="223" guiY="355" id="SLEEP" type="SLEEP"/>
+<Node fileURL="C:/Users/jsmartinez/Documents/poli/bigdata/proyectoBigData/test.xls" guiName="SpreadsheetDataReader" guiX="76" guiY="584" id="SPREADSHEET_DATA_READER" sheet="Hoja1" type="SPREADSHEET_READER"/>
+<Node dataPolicy="strict" fileURL="C:/Users/jsmartinez/Documents/poli/bigdata/proyectoBigData/test.xls" guiName="SpreadsheetDataReader" guiX="-48" guiY="92" id="SPREADSHEET_DATA_READER1" sheet="test" type="SPREADSHEET_READER"/>
+<Node dataPolicy="strict" fileURL="C:/Users/jsmartinez/Documents/poli/bigdata/proyectoBigData/test.xls" guiName="SpreadsheetDataReader" guiX="-35" guiY="332" id="SPREADSHEET_DATA_READER2" sheet="test" type="SPREADSHEET_READER"/>
+<Node guiName="Success" guiX="397" guiY="33" id="SUCCESS" type="SUCCESS"/>
+<Edge fromNode="DatosEstudiantesValidator:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" outPort="Port 0 (valid)" persistedImplicitMetadata="Metadata3" toNode="REFORMAT1:0"/>
+<Edge fromNode="DatosEstudiantesValidator:1" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" outPort="Port 1 (invalid)" persistedImplicitMetadata="__static_metadata_VALIDATOR_Validator_InvalidRecords" toNode="DBOUTPUT_TABLE2:0"/>
+<Edge fromNode="LOOP:0" guiBendpoints="" guiRouter="Manhattan" id="Edge17" inPort="Port 0 (in)" outPort="Port 0 (end of loop)" persistedImplicitMetadata="Metadata3" toNode="SUCCESS:0"/>
+<Edge fromNode="LOOP:1" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (in)" outPort="Port 1 (continue loop)" persistedImplicitMetadata="Metadata3" toNode="DatosEstudiantesValidator:0"/>
 <Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
 <Edge fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE1:0"/>
+<Edge fromNode="SLEEP:0" guiBendpoints="" guiRouter="Manhattan" id="Edge20" inPort="Port 1 (back from loop)" outPort="Port 0 (out)" persistedImplicitMetadata="Metadata3" toNode="LOOP:1"/>
 <Edge fromNode="SPREADSHEET_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (output)" toNode="REFORMAT:0"/>
-<Edge fromNode="SPREADSHEET_DATA_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (output)" toNode="REFORMAT1:0"/>
+<Edge fromNode="SPREADSHEET_DATA_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge14" inPort="Port 0 (input token)" metadata="Metadata3" outPort="Port 0 (output)" toNode="LOOP:0"/>
+<Edge fromNode="SPREADSHEET_DATA_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge26" inPort="Port 0 (in)" outPort="Port 0 (output)" persistedImplicitMetadata="Metadata3" toNode="SLEEP:0"/>
 </Phase>
 </Graph>
