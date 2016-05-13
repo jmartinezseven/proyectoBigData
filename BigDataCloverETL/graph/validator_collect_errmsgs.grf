@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Lukas" created="Mon Jan 04 11:26:18 CET 2016" guiVersion="4.1.1" id="1452005837642" licenseCode="CLP1DJAVLI89250398BY" licenseType="Commercial" modified="Wed Jan 06 10:10:03 CET 2016" modifiedBy="Lukas" name="validator_collect_errmsgs" revision="1.14" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata0">
+<Record fieldDelimiter="|" name="recordName1" recordDelimiter="\r\n" type="delimited">
+<Field name="field1" type="string"/>
+</Record>
+</Metadata>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node guiName="DataGenerator" guiX="232" guiY="256" id="DATA_GENERATOR" recordsNumber="1" type="DATA_GENERATOR">
+<attr name="generate"><![CDATA[//#CTL2
+
+// Generates output record.
+function integer generate() {
+	$out.0.field1 = "whateve";
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the generate. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if generate() throws an exception.
+// function integer generateOnError(string errorMessage, string stackTrace) {
+// }
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Trash" guiX="802" guiY="196" id="TRASH" type="TRASH"/>
+<Node guiName="Trash" guiX="802" guiY="327" id="TRASH1" type="TRASH"/>
+<Node guiName="Validator" guiX="520" guiY="256" id="VALIDATOR" type="VALIDATOR">
+<attr name="errorMapping"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.1.field1 = $in.1.validationMessage;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="rules"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<group conjunction="AND" description="" enabled="true" errorMessage="" errorMessageProducer="RULES" lazyEvaluation="false" name="All rules" statusCode="">
+    <children>
+        <copyAllByName customRejectMessage="" description="" enabled="true" inputField="" name="Copy all fields by name" outputField=""/>
+        <comparison acceptEmpty="false" customRejectMessage="is not whatever" description="" enabled="true" inputField="field1" name="Comparison" operator="E" outputField="field1" useType="DEFAULT" value="whatever">
+            <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+        </comparison>
+        <stringLength acceptEmpty="false" customRejectMessage="is too short" description="" enabled="true" inputField="field1" max="" min="8" name="String Length" outputField="field1" trimInput="false">
+            <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+        </stringLength>
+    </children>
+    <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+    <imports/>
+</group>
+]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="DATA_GENERATOR:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="VALIDATOR:0"/>
+<Edge debugMode="true" fromNode="VALIDATOR:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" outPort="Port 0 (valid)" persistedImplicitMetadata="Metadata0" toNode="TRASH:0"/>
+<Edge debugMode="true" fromNode="VALIDATOR:1" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 1 (invalid)" toNode="TRASH1:0"/>
+</Phase>
+</Graph>
