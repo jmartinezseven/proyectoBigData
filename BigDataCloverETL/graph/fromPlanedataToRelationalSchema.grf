@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Carlos" created="Mon May 09 11:47:50 COT 2016" guiVersion="4.1.3" id="1462821726264" licenseCode="CLP1DNONEX86645084EX" licenseType="Evaluation" modified="Thu May 12 00:13:32 COT 2016" modifiedBy="Carlos" name="fromPlanedataToRelationalSchema" revision="1.8" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata0">
+<Record fieldDelimiter=";" name="datos_filtrados_estudiantes" recordDelimiter="\n" type="delimited">
+<Field name="id" size="11" type="integer"/>
+<Field name="id_estudiante" size="45" type="string"/>
+<Field name="primer_nombre" size="45" type="string"/>
+<Field name="segundo_nombre" size="45" type="string"/>
+<Field name="primer_apellido" size="45" type="string"/>
+<Field name="segundo_apellido" size="45" type="string"/>
+<Field format="yyyy-MM-dd" name="fecha_nacimiento" size="10" type="date"/>
+<Field name="estado_civil" size="45" type="string"/>
+<Field name="estrato" size="45" type="string"/>
+<Field name="becado" size="1" type="boolean"/>
+<Field name="sexo" size="1" type="string"/>
+<Field name="trabaja_actualmente" size="1" type="boolean"/>
+<Field format="yyyy-MM-dd" name="fecha_ingreso_universidad" size="10" type="date"/>
+<Field format="yyyy-MM-dd" name="fecha_graduacion_universidadl" size="10" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2">
+<Record fieldDelimiter=";" name="estudiante" recordDelimiter="\n" type="delimited">
+<Field name="codigo" size="11" type="integer"/>
+<Field name="nombre" size="100" type="string"/>
+<Field format="yyyy-MM-dd" name="fecha_nacimiento" size="10" type="date"/>
+<Field name="sexo" size="1" type="string"/>
+<Field name="estrato" size="1" type="integer"/>
+<Field name="estado_civil" size="1" type="string"/>
+<Field name="tiene_beca" size="1" type="boolean"/>
+<Field format="yyyy-MM-dd" name="fecha_ingreso" size="10" type="date"/>
+<Field name="graduado" size="1" type="boolean"/>
+<Field name="convenio_univesitario" size="1" type="boolean"/>
+<Field name="trabaja" size="1" type="boolean"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter=";" name="informaciom_semestre_estudiante" recordDelimiter="\n" type="delimited">
+<Field name="id" size="11" type="integer"/>
+<Field name="id_estudiante" size="45" type="string"/>
+<Field name="anio" size="45" type="string"/>
+<Field name="periodo" size="45" type="string"/>
+<Field name="materia" size="45" type="string"/>
+<Field name="nota_primer_corte" size="22" type="number"/>
+<Field name="nota_segundo_corte" size="22" type="number"/>
+<Field name="nota_tercer_corte" size="22" type="number"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3">
+<Record fieldDelimiter=";" name="semestre" recordDelimiter="\n" type="delimited">
+<Field name="id_semestre" size="11" type="integer"/>
+<Field name="Anno" size="4" type="string"/>
+<Field name="periodo" size="4" type="integer"/>
+<Field name="cant_estudiantes" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_94b598c4e735470" id="JDBC1" jdbcSpecific="MYSQL" name="Mysql_IN" password="9b47547f" type="JDBC" user="bfd0a3a906a8e3"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_363d731a3c8dc48" id="JDBC0" jdbcSpecific="MYSQL" name="Mysql_OUT" password="1ab3359e" type="JDBC" user="bc80edeed62fcf"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node dbConnection="JDBC1" guiName="DBInputTable" guiX="78" guiY="28" id="DBINPUT_TABLE" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from \`heroku_94b598c4e735470\`.\`datos_filtrados_estudiantes\`]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="523" guiY="28" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`estudiante\` (\`codigo\`, \`nombre\`, \`fecha_nacimiento\`, \`sexo\`, \`estrato\`, \`estado_civil\`, \`tiene_beca\`, \`fecha_ingreso\`, \`graduado\`, \`convenio_univesitario\`, \`trabaja\`)
+VALUES ($codigo, $nombre, $fecha_nacimiento, $sexo, $estrato, $estado_civil, $tiene_beca, $fecha_ingreso, $graduado, $convenio_univesitario, $trabaja)]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="323" guiY="28" id="REFORMAT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.nombre = $in.0.primer_nombre + " " +
+	 $in.0.segundo_nombre + " " +
+	 $in.0.primer_apellido + " " +
+	 $in.0.segundo_apellido;
+	$out.0.fecha_nacimiento = $in.0.fecha_nacimiento;
+	$out.0.sexo = $in.0.sexo;
+	$out.0.estrato = str2integer($in.0.estrato);
+	$out.0.estado_civil = charAt(upperCase($in.0.estado_civil),0);
+	$out.0.tiene_beca = $in.0.becado;
+	$out.0.fecha_ingreso = $in.0.fecha_ingreso_universidad;
+	$out.0.trabaja = $in.0.trabaja_actualmente;
+	$out.0.graduado = isEmpty(date2str($in.0.fecha_graduacion_universidadl, "yyyy-MM-dd"));
+	$out.0.convenio_univesitario = false;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="DBINPUT_TABLE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="REFORMAT:0"/>
+<Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
+</Phase>
+</Graph>
