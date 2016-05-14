@@ -1,116 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Graph author="Carlos" created="Wed May 04 00:55:07 COT 2016" guiVersion="4.1.3" id="1462343744498" licenseCode="CLP1DSEVEN58088402EX" licenseType="Evaluation" modified="Fri May 13 02:47:10 COT 2016" modifiedBy="jsmartinez" name="LoadTableInformacionSemestreEstudiante" revision="1.58" showComponentDetails="true">
+<Graph author="Carlos" created="Wed May 04 00:55:07 COT 2016" guiVersion="4.1.3" id="1462343744498" licenseCode="CLP1DSEVEN58088402EX" licenseType="Evaluation" modified="Sat May 14 01:54:52 COT 2016" modifiedBy="jsmartinez" name="LoadTableInformacionSemestreEstudiante" revision="1.59" showComponentDetails="true">
 <Global>
 <Metadata id="Metadata1" previewAttachmentCharset="ISO-8859-1">
 <Record fieldDelimiter="|" name="consolidado_excels_MAtriculados_II_Final" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
-<Field format="" label="base_codPrimiparoPoli" name="base_codPrimiparoPoli" type="integer"/>
-<Field format="" label="base_PrimiparoPoli" name="base_PrimiparoPoli" type="string"/>
-<Field format="" label="base_idAnho" name="base_idAnho" type="string"/>
-<Field format="" label="base_idPeriodo" name="base_idPeriodo" type="integer"/>
-<Field format="" label="base_UsuarioAppInscripcion" name="base_UsuarioAppInscripcion" type="string"/>
-<Field format="" label="base_AppInscripcion" name="base_AppInscripcion" type="string"/>
-<Field format="" label="datp_NumeroDocumento" name="datp_NumeroDocumento" type="string"/>
-<Field format="" label="datp_NombresCompletos" name="datp_NombresCompletos" type="string"/>
-<Field format="" label="datp_Nombres" name="datp_Nombres" type="string"/>
-<Field format="" label="datp_Apellido1" name="datp_Apellido1" type="string"/>
-<Field format="" label="datp_Apellido2" name="datp_Apellido2" type="string"/>
-<Field format="" label="datp_direccionResidencia" name="datp_direccionResidencia" type="string"/>
+<Field label="base_codPrimiparoPoli" name="base_codPrimiparoPoli" type="integer"/>
+<Field label="base_PrimiparoPoli" name="base_PrimiparoPoli" type="string"/>
+<Field label="base_idAnho" name="base_idAnho" type="string"/>
+<Field label="base_idPeriodo" name="base_idPeriodo" type="integer"/>
+<Field label="base_UsuarioAppInscripcion" name="base_UsuarioAppInscripcion" type="string"/>
+<Field label="base_AppInscripcion" name="base_AppInscripcion" type="string"/>
+<Field label="datp_NumeroDocumento" name="datp_NumeroDocumento" type="string"/>
+<Field label="datp_NombresCompletos" name="datp_NombresCompletos" type="string"/>
+<Field label="datp_Nombres" name="datp_Nombres" type="string"/>
+<Field label="datp_Apellido1" name="datp_Apellido1" type="string"/>
+<Field label="datp_Apellido2" name="datp_Apellido2" type="string"/>
+<Field label="datp_direccionResidencia" name="datp_direccionResidencia" type="string"/>
 <Field label="datp_TelefonoPrincipal" name="datp_TelefonoPrincipal" type="string"/>
-<Field format="" label="datp_correoElectronico" name="datp_correoElectronico" type="string"/>
-<Field format="" label="datp_Genero" name="datp_Genero" type="string"/>
-<Field format="" label="datp_Celular" name="datp_Celular" type="string"/>
-<Field format="" label="datp_TipoIdentificacion" name="datp_TipoIdentificacion" type="string"/>
-<Field format="" label="datp_idCiudad" name="datp_idCiudad" type="string"/>
-<Field format="" label="datp_Ciudad" name="datp_Ciudad" type="string"/>
-<Field format="" label="datp_Trabaja" name="datp_Trabaja" type="integer"/>
-<Field format="" label="datp_NombreEmpresa" name="datp_NombreEmpresa" type="string"/>
-<Field format="" label="datp_TelefonoEmpresa" name="datp_TelefonoEmpresa" type="string"/>
-<Field format="" label="datp_DireccionEmpresa" name="datp_DireccionEmpresa" type="string"/>
-<Field format="" label="acad_Movilidad" name="acad_Movilidad" type="string"/>
-<Field format="" label="acad_anhoPeriodo" name="acad_anhoPeriodo" type="string"/>
-<Field format="" label="acad_codigoEstudiante" name="acad_codigoEstudiante" type="string"/>
-<Field format="" label="acad_IdJornada" name="acad_IdJornada" type="integer"/>
-<Field format="" label="acad_Jornada" name="acad_Jornada" type="string"/>
-<Field format="" label="acad_idPrograma" name="acad_idPrograma" type="integer"/>
-<Field format="" label="acad_Programa" name="acad_Programa" type="string"/>
-<Field format="" label="acad_idNivel" name="acad_idNivel" type="integer"/>
-<Field format="" label="acad_Nivel" name="acad_Nivel" type="string"/>
-<Field format="" label="acad_CohorteIngreso" name="acad_CohorteIngreso" type="string"/>
-<Field format="" label="acad_Semestre" name="acad_Semestre" type="integer"/>
-<Field format="" label="acad_idSede" name="acad_idSede" type="integer"/>
-<Field format="" label="acad_sede" name="acad_sede" type="string"/>
-<Field format="" label="acad_idEstadoAcademico" name="acad_idEstadoAcademico" type="string"/>
-<Field format="" label="acad_EstadoAcademico" name="acad_EstadoAcademico" type="string"/>
-<Field format="" label="acad_consecutivoWEB" name="acad_consecutivoWEB" type="string"/>
-<Field format="" label="acad_Titulo" name="acad_Titulo" type="string"/>
-<Field format="" label="acad_idTipoSede" name="acad_idTipoSede" type="integer"/>
-<Field format="" label="acad_TipoSede" name="acad_TipoSede" type="string"/>
-<Field format="" label="acad_idFacultad" name="acad_idFacultad" type="integer"/>
-<Field format="" label="acad_Facultad" name="acad_Facultad" type="string"/>
+<Field label="datp_correoElectronico" name="datp_correoElectronico" type="string"/>
+<Field label="datp_Genero" name="datp_Genero" type="string"/>
+<Field label="datp_Celular" name="datp_Celular" type="string"/>
+<Field label="datp_TipoIdentificacion" name="datp_TipoIdentificacion" type="string"/>
+<Field label="datp_idCiudad" name="datp_idCiudad" type="string"/>
+<Field label="datp_Ciudad" name="datp_Ciudad" type="string"/>
+<Field label="datp_Trabaja" name="datp_Trabaja" type="integer"/>
+<Field label="datp_NombreEmpresa" name="datp_NombreEmpresa" type="string"/>
+<Field label="datp_TelefonoEmpresa" name="datp_TelefonoEmpresa" type="string"/>
+<Field label="datp_DireccionEmpresa" name="datp_DireccionEmpresa" type="string"/>
+<Field label="acad_Movilidad" name="acad_Movilidad" type="string"/>
+<Field label="acad_anhoPeriodo" name="acad_anhoPeriodo" type="string"/>
+<Field label="acad_codigoEstudiante" name="acad_codigoEstudiante" type="string"/>
+<Field label="acad_IdJornada" name="acad_IdJornada" type="integer"/>
+<Field label="acad_Jornada" name="acad_Jornada" type="string"/>
+<Field label="acad_idPrograma" name="acad_idPrograma" type="integer"/>
+<Field label="acad_Programa" name="acad_Programa" type="string"/>
+<Field label="acad_idNivel" name="acad_idNivel" type="integer"/>
+<Field label="acad_Nivel" name="acad_Nivel" type="string"/>
+<Field label="acad_CohorteIngreso" name="acad_CohorteIngreso" type="string"/>
+<Field label="acad_Semestre" name="acad_Semestre" type="integer"/>
+<Field label="acad_idSede" name="acad_idSede" type="integer"/>
+<Field label="acad_sede" name="acad_sede" type="string"/>
+<Field label="acad_idEstadoAcademico" name="acad_idEstadoAcademico" type="string"/>
+<Field label="acad_EstadoAcademico" name="acad_EstadoAcademico" type="string"/>
+<Field label="acad_consecutivoWEB" name="acad_consecutivoWEB" type="string"/>
+<Field label="acad_Titulo" name="acad_Titulo" type="string"/>
+<Field label="acad_idTipoSede" name="acad_idTipoSede" type="integer"/>
+<Field label="acad_TipoSede" name="acad_TipoSede" type="string"/>
+<Field label="acad_idFacultad" name="acad_idFacultad" type="integer"/>
+<Field label="acad_Facultad" name="acad_Facultad" type="string"/>
 <Field label="acad_idCSU" name="acad_idCSU" type="integer"/>
 <Field label="acad_CSU" name="acad_CSU" type="string"/>
 <Field label="acad_IdTipoDeCSU" name="acad_IdTipoDeCSU" type="string"/>
 <Field label="acad_TipoDeCSU" name="acad_TipoDeCSU" type="string"/>
 <Field label="acad_ZonaDeVenta" name="acad_ZonaDeVenta" type="string"/>
 <Field format="excel:m/d/yy" label="acad_FechaOferta" name="acad_FechaOferta" type="date"/>
-<Field format="" label="acad_otraUniversidad" name="acad_otraUniversidad" type="string"/>
-<Field format="" label="acad_Anho" name="acad_Anho" type="integer"/>
-<Field format="" label="acad_SNIES" name="acad_SNIES" type="string"/>
-<Field format="" label="acad_UnidadOperativa" name="acad_UnidadOperativa" type="string"/>
-<Field format="" label="finan_numeroReciboPago" name="finan_numeroReciboPago" type="string"/>
-<Field format="" label="finan_valorMatricula" name="finan_valorMatricula" type="string"/>
-<Field format="" label="finan_valorOrdinario" name="finan_valorOrdinario" type="string"/>
-<Field format="" label="finan_valorExtraOrdinario" name="finan_valorExtraOrdinario" type="string"/>
-<Field format="" label="finan_DiferenciaValoresMatricula" name="finan_DiferenciaValoresMatricula" type="string"/>
-<Field format="" label="finan_PagoExtraordinario" name="finan_PagoExtraordinario" type="string"/>
-<Field format="" label="finan_MedioPago" name="finan_MedioPago" type="string"/>
+<Field label="acad_otraUniversidad" name="acad_otraUniversidad" type="string"/>
+<Field label="acad_Anho" name="acad_Anho" type="integer"/>
+<Field label="acad_SNIES" name="acad_SNIES" type="string"/>
+<Field label="acad_UnidadOperativa" name="acad_UnidadOperativa" type="string"/>
+<Field label="finan_numeroReciboPago" name="finan_numeroReciboPago" type="string"/>
+<Field label="finan_valorMatricula" name="finan_valorMatricula" type="string"/>
+<Field label="finan_valorOrdinario" name="finan_valorOrdinario" type="string"/>
+<Field label="finan_valorExtraOrdinario" name="finan_valorExtraOrdinario" type="string"/>
+<Field label="finan_DiferenciaValoresMatricula" name="finan_DiferenciaValoresMatricula" type="string"/>
+<Field label="finan_PagoExtraordinario" name="finan_PagoExtraordinario" type="string"/>
+<Field label="finan_MedioPago" name="finan_MedioPago" type="string"/>
 <Field format="excel:m/d/yy h:mm" label="finan_FechaPago" name="finan_FechaPago" type="date"/>
-<Field format="" label="finan_EntidadBancaria" name="finan_EntidadBancaria" type="string"/>
-<Field format="" label="finan_ValorPagado" name="finan_ValorPagado" type="string"/>
-<Field format="" label="finan_idEstadoFinanciero" name="finan_idEstadoFinanciero" type="integer"/>
-<Field format="" label="finan_Estadofinanciero" name="finan_Estadofinanciero" type="string"/>
-<Field format="" label="finan_SemanaMatricula" name="finan_SemanaMatricula" type="string"/>
-<Field format="" label="finana_MediaMatricula" name="finana_MediaMatricula" type="string"/>
-<Field format="" label="finan_descuento" name="finan_descuento" type="string"/>
-<Field format="" label="Gmail" name="Gmail" type="string"/>
-<Field format="" label="Reintegro" name="Reintegro" type="string"/>
+<Field label="finan_EntidadBancaria" name="finan_EntidadBancaria" type="string"/>
+<Field label="finan_ValorPagado" name="finan_ValorPagado" type="string"/>
+<Field label="finan_idEstadoFinanciero" name="finan_idEstadoFinanciero" type="integer"/>
+<Field label="finan_Estadofinanciero" name="finan_Estadofinanciero" type="string"/>
+<Field label="finan_SemanaMatricula" name="finan_SemanaMatricula" type="string"/>
+<Field label="finana_MediaMatricula" name="finana_MediaMatricula" type="string"/>
+<Field label="finan_descuento" name="finan_descuento" type="string"/>
+<Field label="Gmail" name="Gmail" type="string"/>
+<Field label="Reintegro" name="Reintegro" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata0">
 <Record fieldDelimiter="|" name="consolidado_excels_Notas_P_Final" recordDelimiter="\r\n" type="delimited">
-<Field format="" label="IdCodigo" name="IdCodigo" type="string"/>
-<Field format="" label="AnoPeriEstu" name="AnoPeriEstu" type="string"/>
-<Field format="" label="AnoPeriodo" name="AnoPeriodo" type="string"/>
-<Field format="" label="CodigoMateria" name="CodigoMateria" type="string"/>
-<Field format="" label="IdGrupo" name="IdGrupo" type="string"/>
-<Field format="" label="Materia" name="Materia" type="string"/>
-<Field format="" label="TipoNota" name="TipoNota" type="string"/>
-<Field format="" label="Nota" name="Nota" type="decimal"/>
-<Field format="" label="Estudiante" name="Estudiante" type="string"/>
-<Field format="" label="Semestre" name="Semestre" type="integer"/>
-<Field format="" label="Programa" name="Programa" type="string"/>
-<Field format="" label="Jornada" name="Jornada" type="string"/>
-<Field format="" label="Aprobo" name="Aprobo" type="string"/>
-<Field format="" label="IdArea" name="IdArea" type="string"/>
-<Field format="" label="Area" name="Area" type="string"/>
-<Field format="" label="IdSede" name="IdSede" type="integer"/>
-<Field format="" label="Sede" name="Sede" type="string"/>
-<Field format="" label="IdEstudiante" name="IdEstudiante" type="string"/>
-<Field format="" label="IdPrograma" name="IdPrograma" type="integer"/>
-<Field format="" label="Credito" name="Credito" type="integer"/>
-<Field format="" label="NotaCredito" name="NotaCredito" type="decimal"/>
-<Field format="" label="Graduado" name="Graduado" type="string"/>
-<Field format="" label="email" name="email" type="string"/>
+<Field label="IdCodigo" name="IdCodigo" type="string"/>
+<Field label="AnoPeriEstu" name="AnoPeriEstu" type="string"/>
+<Field label="AnoPeriodo" name="AnoPeriodo" type="string"/>
+<Field label="CodigoMateria" name="CodigoMateria" type="string"/>
+<Field label="IdGrupo" name="IdGrupo" type="string"/>
+<Field label="Materia" name="Materia" type="string"/>
+<Field label="TipoNota" name="TipoNota" type="string"/>
+<Field label="Nota" name="Nota" type="decimal"/>
+<Field label="Estudiante" name="Estudiante" type="string"/>
+<Field label="Semestre" name="Semestre" type="integer"/>
+<Field label="Programa" name="Programa" type="string"/>
+<Field label="Jornada" name="Jornada" type="string"/>
+<Field label="Aprobo" name="Aprobo" type="string"/>
+<Field label="IdArea" name="IdArea" type="string"/>
+<Field label="Area" name="Area" type="string"/>
+<Field label="IdSede" name="IdSede" type="integer"/>
+<Field label="Sede" name="Sede" type="string"/>
+<Field label="IdEstudiante" name="IdEstudiante" type="string"/>
+<Field label="IdPrograma" name="IdPrograma" type="integer"/>
+<Field label="Credito" name="Credito" type="integer"/>
+<Field label="NotaCredito" name="NotaCredito" type="decimal"/>
+<Field label="Graduado" name="Graduado" type="string"/>
+<Field label="email" name="email" type="string"/>
 <Field label="PaisMovilidad" name="PaisMovilidad" type="string"/>
 <Field label="CiudadMovilidad" name="CiudadMovilidad" type="string"/>
 <Field label="UniversidadMovilidad" name="UniversidadMovilidad" type="string"/>
-<Field format="" label="Movilidad" name="Movilidad" type="string"/>
-<Field format="" label="IdAno" name="IdAno" type="string"/>
-<Field format="" label="IdPeriodo" name="IdPeriodo" type="integer"/>
-<Field format="" label="ProgramaPeriodo" name="ProgramaPeriodo" type="string"/>
-<Field format="" label="Cohorte" name="Cohorte" type="string"/>
-<Field format="" label="DepartamentoAcademico" name="DepartamentoAcademico" type="string"/>
-<Field format="" label="PrimiparoInstitucion" name="PrimiparoInstitucion" type="string"/>
+<Field label="Movilidad" name="Movilidad" type="string"/>
+<Field label="IdAno" name="IdAno" type="string"/>
+<Field label="IdPeriodo" name="IdPeriodo" type="integer"/>
+<Field label="ProgramaPeriodo" name="ProgramaPeriodo" type="string"/>
+<Field label="Cohorte" name="Cohorte" type="string"/>
+<Field label="DepartamentoAcademico" name="DepartamentoAcademico" type="string"/>
+<Field label="PrimiparoInstitucion" name="PrimiparoInstitucion" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata4" previewAttachmentCharset="ISO-8859-1">
@@ -252,7 +252,7 @@
 <Dictionary/>
 </Global>
 <Phase number="0">
-<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="399" guiY="509" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="633" guiY="509" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_94b598c4e735470\`.\`notas_p\` (\`id\`, \`IdCodigo\`, \`AnoPeriEstu\`, \`AnoPeriodo\`, \`CodigoMateria\`, \`IdGrupo\`, \`Materia\`, \`TipoNota\`, \`Nota\`, \`Estudiante\`, \`Semestre\`, \`Programa\`, \`Jornada\`, \`Aprobo\`, \`IdArea\`, \`Area\`, \`IdSede\`, \`Sede\`, \`IdEstudiante\`, \`IdPrograma\`, \`Credito\`, \`NotaCredito\`, \`Graduado\`, \`email\`, \`PaisMovilidad\`, \`CiudadMovilidad\`, \`UniversidadMovilidad\`, \`IdAno\`, \`IdPeriodo\`, \`ProgramaPeriodo\`, \`Cohorte\`, \`DepartamentoAcademico\`, \`PrimiparoInstitucion\`)
 VALUES ($id, $IdCodigo, $AnoPeriEstu, $AnoPeriodo, $CodigoMateria, $IdGrupo, $Materia, $TipoNota, $Nota, $Estudiante, $Semestre, $Programa, $Jornada, $Aprobo, $IdArea, $Area, $IdSede, $Sede, $IdEstudiante, $IdPrograma, $Credito, $NotaCredito, $Graduado, $email, $PaisMovilidad, $CiudadMovilidad, $UniversidadMovilidad, $IdAno, $IdPeriodo, $ProgramaPeriodo, $Cohorte, $DepartamentoAcademico, $PrimiparoInstitucion)]]></attr>
 </Node>
@@ -261,6 +261,7 @@ VALUES ($id, $IdCodigo, $AnoPeriEstu, $AnoPeriodo, $CodigoMateria, $IdGrupo, $Ma
 VALUES ($id, $base_codPrimiparoPoli, $base_PrimiparoPoli, $base_idAnho, $base_idPeriodo, $base_UsuarioAppInscripcion, $base_AppInscripcion, $datp_NumeroDocumento, $datp_NombresCompletos, $datp_Nombres, $datp_Apellido1, $datp_Apellido2, $datp_direccionResidencia, $datp_TelefonoPrincipal, $datp_correoElectronico, $datp_Genero, $datp_Celular, $datp_TipoIdentificacion, $datp_idCiudad, $datp_Ciudad, $datp_Trabaja, $datp_NombreEmpresa, $datp_TelefonoEmpresa, $datp_DireccionEmpresa, $acad_Movilidad, $acad_anhoPeriodo, $acad_codigoEstudiante, $acad_IdJornada, $acad_Jornada, $acad_idPrograma, $acad_Programa, $acad_idNivel, $acad_Nivel, $acad_CohorteIngreso, $acad_Semestre, $acad_idSede, $acad_sede, $acad_idEstadoAcademico, $acad_EstadoAcademico, $acad_consecutivoWEB, $acad_Titulo, $acad_idTipoSede, $acad_TipoSede, $acad_idFacultad, $acad_Facultad, $acad_idCSU, $acad_CSU, $acad_IdTipoDeCSU, $acad_TipoDeCSU, $acad_ZonaDeVenta, $acad_FechaOferta, $acad_otraUniversidad, $acad_Anho, $acad_SNIES, $acad_UnidadOperativa, $finan_numeroReciboPago, $finan_valorMatricula, $finan_valorOrdinario, $finan_valorExtraOrdinario, $finan_DiferenciaValoresMatricula, $finan_PagoExtraordinario, $finan_MedioPago, $finan_FechaPago, $finan_EntidadBancaria, $finan_ValorPagado, $finan_idEstadoFinanciero, $finan_Estadofinanciero, $finan_SemanaMatricula, $finana_MediaMatricula, $finan_descuento, $Gmail, $Reintegro)]]></attr>
 </Node>
 <Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="419" guiY="361" id="DBOUTPUT_TABLE2" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="419" guiY="645" id="DBOUTPUT_TABLE3" type="DB_OUTPUT_TABLE"/>
 <Node guiName="Validator" guiX="94" guiY="267" id="DatosEstudiantesValidator" type="VALIDATOR">
 <attr name="errorMapping"><![CDATA[//#CTL2
 
@@ -295,13 +296,71 @@ function integer transform() {
 <group conjunction="AND" description="" enabled="true" errorMessage="" errorMessageProducer="RULES" lazyEvaluation="true" name="All rules" statusCode="">
     <children>
         <copyAllByName customRejectMessage="" description="" enabled="true" inputField="" name="Copy all fields by name" outputField=""/>
+        <nonEmptyField customRejectMessage="El número de documento no puede ser vacío" description="" enabled="true" goal="NONEMPTY" inputField="datp_NumeroDocumento" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="El código del primiparo no puede ser vacio" description="" enabled="true" goal="NONEMPTY" inputField="base_codPrimiparoPoli" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <email acceptEmpty="false" allowGroupAddresses="false" customRejectMessage="El correo ingresado no es correcto. Por favor verifiquelo" description="" enabled="true" inputField="datp_correoElectronico" name="Email Address" outputField="" plainAddress="false" trimInput="false">
+            <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+        </email>
+        <stringLength acceptEmpty="false" customRejectMessage="El genero solo acepta como valor los caracteres M o F" description="" enabled="true" inputField="datp_Genero" max="1" min="1" name="String Length" outputField="" trimInput="false">
+            <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+        </stringLength>
+        <stringLength acceptEmpty="false" customRejectMessage="El celular ingresado no es correcto" description="" enabled="true" inputField="datp_Celular" max="10" min="10" name="String Length" outputField="" trimInput="false">
+            <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+        </stringLength>
     </children>
     <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
     <imports/>
 </group>
 ]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="114" guiY="509" id="REFORMAT" type="REFORMAT">
+<Node guiName="Validator" guiX="106" guiY="509" id="DatosEstudiantesValidator1" type="VALIDATOR">
+<attr name="errorMapping"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.1.recordNo = $in.1.recordNo;
+	$out.1.validationMessage = $in.1.validationMessage;
+	$out.1.componentID = $in.1.componentID;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="rules"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<group conjunction="AND" description="" enabled="true" errorMessage="" errorMessageProducer="RULES" lazyEvaluation="true" name="All rules" statusCode="">
+    <children>
+        <copyAllByName customRejectMessage="" description="" enabled="true" inputField="" name="Copy all fields by name" outputField=""/>
+        <nonEmptyField customRejectMessage="EL código del estudiante no puede ser vacío" description="" enabled="true" goal="NONEMPTY" inputField="IdCodigo" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="El código de la materia no puede ser vacío" description="" enabled="true" goal="NONEMPTY" inputField="CodigoMateria" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="El año del periodo no puede ser vacío" description="" enabled="true" goal="NONEMPTY" inputField="AnoPeriodo" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="EL id del estudiante no puede ser vacío" description="" enabled="true" goal="NONEMPTY" inputField="IdEstudiante" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="La materia no puede ser vacía" description="" enabled="true" goal="NONEMPTY" inputField="Materia" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="EL id del año cursado no puede ser vacío" description="" enabled="true" goal="NONEMPTY" inputField="IdAno" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="El id del periodo no puede ser vacio" description="" enabled="true" goal="NONEMPTY" inputField="IdPeriodo" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+    </children>
+    <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+    <imports/>
+</group>
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="424" guiY="509" id="REFORMAT" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
@@ -464,9 +523,11 @@ function integer transform() {
 <Node dataPolicy="strict" fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="SpreadsheetDataReader" guiX="-243" guiY="267" id="SPREADSHEET_DATA_READER2" sheet="MAtriculados_II_Final" type="SPREADSHEET_READER"/>
 <Edge fromNode="DatosEstudiantesValidator:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" outPort="Port 0 (valid)" persistedImplicitMetadata="Metadata1" toNode="REFORMAT1:0"/>
 <Edge fromNode="DatosEstudiantesValidator:1" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" outPort="Port 1 (invalid)" persistedImplicitMetadata="__static_metadata_VALIDATOR_Validator_InvalidRecords" toNode="DBOUTPUT_TABLE2:0"/>
+<Edge fromNode="DatosEstudiantesValidator1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" outPort="Port 0 (valid)" persistedImplicitMetadata="Metadata0" toNode="REFORMAT:0"/>
+<Edge fromNode="DatosEstudiantesValidator1:1" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 0 (in)" outPort="Port 1 (invalid)" persistedImplicitMetadata="__static_metadata_VALIDATOR_Validator_InvalidRecords" toNode="DBOUTPUT_TABLE3:0"/>
 <Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
 <Edge fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE1:0"/>
-<Edge fromNode="SPREADSHEET_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="REFORMAT:0"/>
+<Edge fromNode="SPREADSHEET_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="DatosEstudiantesValidator1:0"/>
 <Edge fromNode="SPREADSHEET_DATA_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge21" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (output)" toNode="DatosEstudiantesValidator:0"/>
 </Phase>
 </Graph>
