@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Graph author="Carlos" created="Wed May 04 00:55:07 COT 2016" guiVersion="4.1.3" id="1462343744498" licenseCode="CLP1DSEVEN58088402EX" licenseType="Evaluation" modified="Sat May 14 01:54:52 COT 2016" modifiedBy="jsmartinez" name="LoadTableInformacionSemestreEstudiante" revision="1.59" showComponentDetails="true">
+<Graph author="Carlos" created="Wed May 04 00:55:07 COT 2016" guiVersion="4.1.3" id="1462343744498" licenseCode="CLP1DSEVEN58088402EX" licenseType="Evaluation" modified="Wed May 18 23:57:29 COT 2016" modifiedBy="jsmartinez" name="LoadTableInformacionSemestreEstudiante" revision="1.61" showComponentDetails="true">
 <Global>
+<Metadata id="Metadata3" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="|" name="consolidado_excels_Graduados" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
+<Field format="" label="IDESTUDIANTE" name="IDESTUDIANTE" type="string"/>
+<Field format="" label="CODIGOESTUDIANTE" name="CODIGOESTUDIANTE" type="string"/>
+<Field format="" label="TIPODOCUMENTO" name="TIPODOCUMENTO" type="string"/>
+<Field format="" label="NOMBRES" name="NOMBRES" type="string"/>
+<Field format="" label="PRIMERAPELLIDO" name="PRIMERAPELLIDO" type="string"/>
+<Field format="" label="SEGUNDOAPELLIDO" name="SEGUNDOAPELLIDO" type="string"/>
+<Field format="" label="JORNADA" name="JORNADA" type="string"/>
+<Field format="" label="PROGRAMASMEN" name="PROGRAMASMEN" type="string"/>
+<Field format="" label="PROGRAMASIUPG" name="PROGRAMASIUPG" type="string"/>
+<Field format="" label="IDPROGRAMASIA" name="IDPROGRAMASIA" type="long"/>
+<Field format="" label="CAMPUSLOCALIZACION" name="CAMPUSLOCALIZACION" type="string"/>
+<Field format="" label="CONVENIODETALLE" name="CONVENIODETALLE" type="string"/>
+<Field format="" label="CONVENIOGLOBAL" name="CONVENIOGLOBAL" type="string"/>
+<Field format="" label="NIVELACADEMICO" name="NIVELACADEMICO" type="string"/>
+<Field format="" label="NIVELFORMACION" name="NIVELFORMACION" type="string"/>
+<Field format="" label="MODALIDAD" name="MODALIDAD" type="string"/>
+<Field format="" label="PERIODOFINANCIEROTAB" name="PERIODOFINANCIEROTAB" type="long"/>
+<Field format="" label="PERIODOACTAGRADO" name="PERIODOACTAGRADO" type="long"/>
+<Field format="" label="FACULTAD" name="FACULTAD" type="string"/>
+<Field format="" label="SNIESPROGRAMA" name="SNIESPROGRAMA" type="long"/>
+<Field format="" label="SEDESIA" name="SEDESIA" type="string"/>
+<Field format="" label="IDSEDE" name="IDSEDE" type="long"/>
+<Field format="" label="GENERO" name="GENERO" type="string"/>
+<Field format="" label="TITULOGRADUADOMEN" name="TITULOGRADUADOMEN" type="string"/>
+<Field format="" label="AÑOGRADO" name="ANOGRADO" type="long"/>
+<Field format="excel:m/d/yy" label="FECHAACTAGRADO" name="FECHAACTAGRADO" type="date"/>
+<Field format="" label="NUMACTAGRADO" name="NUMACTAGRADO" type="long"/>
+<Field format="excel:m/d/yy" label="FECHAGRADO" name="FECHAGRADO" type="date"/>
+<Field format="excel:m/d/yy" label="FECHAINSCRIPCIONGRADO" name="FECHAINSCRIPCIONGRADO" type="date"/>
+<Field format="" label="FOLIOGRADOSIA" name="FOLIOGRADOSIA" type="long"/>
+</Record>
+</Metadata>
 <Metadata id="Metadata1" previewAttachmentCharset="ISO-8859-1">
 <Record fieldDelimiter="|" name="consolidado_excels_MAtriculados_II_Final" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
 <Field label="base_codPrimiparoPoli" name="base_codPrimiparoPoli" type="integer"/>
@@ -262,6 +296,11 @@ VALUES ($id, $base_codPrimiparoPoli, $base_PrimiparoPoli, $base_idAnho, $base_id
 </Node>
 <Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="419" guiY="361" id="DBOUTPUT_TABLE2" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="419" guiY="645" id="DBOUTPUT_TABLE3" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="684" guiY="752" id="DBOUTPUT_TABLE4" type="DB_OUTPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_94b598c4e735470\`.\`matriculados\` (\`id\`, \`base_codPrimiparoPoli\`, \`base_PrimiparoPoli\`, \`base_idAnho\`, \`base_idPeriodo\`, \`base_UsuarioAppInscripcion\`, \`base_AppInscripcion\`, \`datp_NumeroDocumento\`, \`datp_NombresCompletos\`, \`datp_Nombres\`, \`datp_Apellido1\`, \`datp_Apellido2\`, \`datp_direccionResidencia\`, \`datp_TelefonoPrincipal\`, \`datp_correoElectronico\`, \`datp_Genero\`, \`datp_Celular\`, \`datp_TipoIdentificacion\`, \`datp_idCiudad\`, \`datp_Ciudad\`, \`datp_Trabaja\`, \`datp_NombreEmpresa\`, \`datp_TelefonoEmpresa\`, \`datp_DireccionEmpresa\`, \`acad_Movilidad\`, \`acad_anhoPeriodo\`, \`acad_codigoEstudiante\`, \`acad_IdJornada\`, \`acad_Jornada\`, \`acad_idPrograma\`, \`acad_Programa\`, \`acad_idNivel\`, \`acad_Nivel\`, \`acad_CohorteIngreso\`, \`acad_Semestre\`, \`acad_idSede\`, \`acad_sede\`, \`acad_idEstadoAcademico\`, \`acad_EstadoAcademico\`, \`acad_consecutivoWEB\`, \`acad_Titulo\`, \`acad_idTipoSede\`, \`acad_TipoSede\`, \`acad_idFacultad\`, \`acad_Facultad\`, \`acad_idCSU\`, \`acad_CSU\`, \`acad_IdTipoDeCSU\`, \`acad_TipoDeCSU\`, \`acad_ZonaDeVenta\`, \`acad_FechaOferta\`, \`acad_otraUniversidad\`, \`acad_Anho\`, \`acad_SNIES\`, \`acad_UnidadOperativa\`, \`finan_numeroReciboPago\`, \`finan_valorMatricula\`, \`finan_valorOrdinario\`, \`finan_valorExtraOrdinario\`, \`finan_DiferenciaValoresMatricula\`, \`finan_PagoExtraordinario\`, \`finan_MedioPago\`, \`finan_FechaPago\`, \`finan_EntidadBancaria\`, \`finan_ValorPagado\`, \`finan_idEstadoFinanciero\`, \`finan_Estadofinanciero\`, \`finan_SemanaMatricula\`, \`finana_MediaMatricula\`, \`finan_descuento\`, \`Gmail\`, \`Reintegro\`)
+VALUES ($id, $base_codPrimiparoPoli, $base_PrimiparoPoli, $base_idAnho, $base_idPeriodo, $base_UsuarioAppInscripcion, $base_AppInscripcion, $datp_NumeroDocumento, $datp_NombresCompletos, $datp_Nombres, $datp_Apellido1, $datp_Apellido2, $datp_direccionResidencia, $datp_TelefonoPrincipal, $datp_correoElectronico, $datp_Genero, $datp_Celular, $datp_TipoIdentificacion, $datp_idCiudad, $datp_Ciudad, $datp_Trabaja, $datp_NombreEmpresa, $datp_TelefonoEmpresa, $datp_DireccionEmpresa, $acad_Movilidad, $acad_anhoPeriodo, $acad_codigoEstudiante, $acad_IdJornada, $acad_Jornada, $acad_idPrograma, $acad_Programa, $acad_idNivel, $acad_Nivel, $acad_CohorteIngreso, $acad_Semestre, $acad_idSede, $acad_sede, $acad_idEstadoAcademico, $acad_EstadoAcademico, $acad_consecutivoWEB, $acad_Titulo, $acad_idTipoSede, $acad_TipoSede, $acad_idFacultad, $acad_Facultad, $acad_idCSU, $acad_CSU, $acad_IdTipoDeCSU, $acad_TipoDeCSU, $acad_ZonaDeVenta, $acad_FechaOferta, $acad_otraUniversidad, $acad_Anho, $acad_SNIES, $acad_UnidadOperativa, $finan_numeroReciboPago, $finan_valorMatricula, $finan_valorOrdinario, $finan_valorExtraOrdinario, $finan_DiferenciaValoresMatricula, $finan_PagoExtraordinario, $finan_MedioPago, $finan_FechaPago, $finan_EntidadBancaria, $finan_ValorPagado, $finan_idEstadoFinanciero, $finan_Estadofinanciero, $finan_SemanaMatricula, $finana_MediaMatricula, $finan_descuento, $Gmail, $Reintegro)]]></attr>
+</Node>
+<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="404" guiY="910" id="DBOUTPUT_TABLE5" type="DB_OUTPUT_TABLE"/>
 <Node guiName="Validator" guiX="94" guiY="267" id="DatosEstudiantesValidator" type="VALIDATOR">
 <attr name="errorMapping"><![CDATA[//#CTL2
 
@@ -354,6 +393,50 @@ function integer transform() {
         <nonEmptyField customRejectMessage="La materia no puede ser vacía" description="" enabled="true" goal="NONEMPTY" inputField="Materia" name="Empty/Nonempty field" outputField="" trimInput="false"/>
         <nonEmptyField customRejectMessage="EL id del año cursado no puede ser vacío" description="" enabled="true" goal="NONEMPTY" inputField="IdAno" name="Empty/Nonempty field" outputField="" trimInput="false"/>
         <nonEmptyField customRejectMessage="El id del periodo no puede ser vacio" description="" enabled="true" goal="NONEMPTY" inputField="IdPeriodo" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+    </children>
+    <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
+    <imports/>
+</group>
+]]></attr>
+</Node>
+<Node guiName="Validator" guiX="100" guiY="805" id="GraduadosValidator3" type="VALIDATOR">
+<attr name="errorMapping"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.1.recordNo = $in.1.recordNo;
+	$out.1.validationMessage = $in.1.validationMessage;
+	$out.1.componentID = $in.1.componentID;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="rules"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<group conjunction="AND" description="" enabled="true" errorMessage="" errorMessageProducer="RULES" lazyEvaluation="true" name="All rules" statusCode="">
+    <children>
+        <copyAllByName customRejectMessage="" description="" enabled="true" inputField="" name="Copy all fields by name" outputField=""/>
+        <nonEmptyField customRejectMessage="" description="" enabled="true" goal="NONEMPTY" inputField="IDESTUDIANTE" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="" description="" enabled="true" goal="NONEMPTY" inputField="CODIGOESTUDIANTE" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="" description="" enabled="true" goal="NONEMPTY" inputField="TIPODOCUMENTO" name="Empty/Nonempty field" outputField="" trimInput="false"/>
+        <nonEmptyField customRejectMessage="" description="" enabled="true" goal="NONEMPTY" inputField="NOMBRES" name="Empty/Nonempty field" outputField="" trimInput="false"/>
     </children>
     <languageSetting dateFormat="" locale="" numberFormat="" timezone=""/>
     <imports/>
@@ -519,15 +602,60 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
+<Node guiName="Reformat" guiX="409" guiY="759" id="REFORMAT2" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.datp_NumeroDocumento = $in.0.IDESTUDIANTE;
+	$out.0.acad_codigoEstudiante = $in.0.CODIGOESTUDIANTE;
+	$out.0.datp_TipoIdentificacion = $in.0.TIPODOCUMENTO;
+	$out.0.datp_Nombres = $in.0.NOMBRES;
+	$out.0.datp_Apellido1 = $in.0.PRIMERAPELLIDO;
+	$out.0.datp_Apellido2 = $in.0.SEGUNDOAPELLIDO;
+	$out.0.acad_Jornada = $in.0.JORNADA;
+	$out.0.acad_idPrograma = long2integer($in.0.IDPROGRAMASIA);
+	$out.0.acad_sede = $in.0.SEDESIA;
+	$out.0.acad_Facultad = $in.0.FACULTAD;
+	$out.0.acad_idSede = long2integer($in.0.IDSEDE);
+	$out.0.datp_Genero = $in.0.GENERO;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
 <Node fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="SpreadsheetDataReader" guiX="-243" guiY="509" id="SPREADSHEET_DATA_READER" sheet="Notas_P_Final" type="SPREADSHEET_READER"/>
+<Node fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="SpreadsheetDataReader" guiX="-243" guiY="805" id="SPREADSHEET_DATA_READER1" sheet="Graduados" type="SPREADSHEET_READER"/>
 <Node dataPolicy="strict" fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="SpreadsheetDataReader" guiX="-243" guiY="267" id="SPREADSHEET_DATA_READER2" sheet="MAtriculados_II_Final" type="SPREADSHEET_READER"/>
 <Edge fromNode="DatosEstudiantesValidator:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" outPort="Port 0 (valid)" persistedImplicitMetadata="Metadata1" toNode="REFORMAT1:0"/>
 <Edge fromNode="DatosEstudiantesValidator:1" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" outPort="Port 1 (invalid)" persistedImplicitMetadata="__static_metadata_VALIDATOR_Validator_InvalidRecords" toNode="DBOUTPUT_TABLE2:0"/>
 <Edge fromNode="DatosEstudiantesValidator1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" outPort="Port 0 (valid)" persistedImplicitMetadata="Metadata0" toNode="REFORMAT:0"/>
 <Edge fromNode="DatosEstudiantesValidator1:1" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 0 (in)" outPort="Port 1 (invalid)" persistedImplicitMetadata="__static_metadata_VALIDATOR_Validator_InvalidRecords" toNode="DBOUTPUT_TABLE3:0"/>
+<Edge fromNode="GraduadosValidator3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" outPort="Port 0 (valid)" persistedImplicitMetadata="Metadata3" toNode="REFORMAT2:0"/>
+<Edge fromNode="GraduadosValidator3:1" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (in)" outPort="Port 1 (invalid)" persistedImplicitMetadata="__static_metadata_VALIDATOR_Validator_InvalidRecords" toNode="DBOUTPUT_TABLE5:0"/>
 <Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
 <Edge fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE1:0"/>
+<Edge fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE4:0"/>
 <Edge fromNode="SPREADSHEET_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="DatosEstudiantesValidator1:0"/>
+<Edge fromNode="SPREADSHEET_DATA_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (output)" toNode="GraduadosValidator3:0"/>
 <Edge fromNode="SPREADSHEET_DATA_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge21" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (output)" toNode="DatosEstudiantesValidator:0"/>
 </Phase>
 </Graph>
