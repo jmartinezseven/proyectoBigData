@@ -1,54 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Graph author="Carlos" created="Mon May 09 11:47:50 COT 2016" guiVersion="4.1.3" id="1462821726264" licenseCode="CLP1DNONEX86645084EX" licenseType="Evaluation" modified="Thu May 12 00:13:32 COT 2016" modifiedBy="Carlos" name="fromPlanedataToRelationalSchema" revision="1.8" showComponentDetails="true">
+<Graph author="Carlos" created="Mon May 09 11:47:50 COT 2016" guiVersion="4.1.3" id="1462821726264" licenseCode="CLP1DNONEX86645084EX" licenseType="Evaluation" modified="Fri May 20 19:23:41 COT 2016" modifiedBy="Carlos" name="fromPlanedataToRelationalSchema" revision="1.31" showComponentDetails="true">
 <Global>
+<Metadata id="Metadata1" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" name="estudiante" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\n" type="delimited">
+<Field label="codigo" name="codigo" size="11" type="string"/>
+<Field label="nombre" name="nombre" size="100" type="string"/>
+<Field label="sexo" name="sexo" size="1" type="string"/>
+<Field label="graduado" name="graduado" size="1" type="boolean"/>
+<Field label="convenio_univesitario" name="convenio_univesitario" size="1" type="boolean"/>
+<Field label="trabaja" name="trabaja" size="1" type="boolean"/>
+<Field label="legal_id_estudiante" name="legal_id_estudiante" size="45" type="string"/>
+<Field label="tipo_legal_id" name="tipo_legal_id" size="5" type="string"/>
+<Field label="jornada" name="jornada" size="45" type="string"/>
+<Field label="año_periodo_ing" name="anno_periodo_ing" size="5" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata4" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" name="materia" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\n" type="delimited">
+<Field name="idMateria" size="200" type="string"/>
+<Field name="nombre_materia" size="200" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata6">
+<Record fieldDelimiter=";" name="materia_por_semestre_estudiante" recordDelimiter="\n" type="delimited">
+<Field name="id_materia" size="10" type="string"/>
+<Field name="id_semestre" size="6" type="string"/>
+<Field name="id_estudiante" size="45" type="string"/>
+<Field name="nota_definitiva" size="22" trim="true" type="number"/>
+<Field name="estudiante_codigo" size="45" type="string"/>
+<Field name="Semestre_id_semestre" size="6" type="string"/>
+<Field name="Materia_idMateria" size="10" type="string"/>
+</Record>
+</Metadata>
 <Metadata id="Metadata0">
-<Record fieldDelimiter=";" name="datos_filtrados_estudiantes" recordDelimiter="\n" type="delimited">
+<Record fieldDelimiter=";" name="matriculados" recordDelimiter="\n" type="delimited">
+<Field name="acad_codigoEstudiante" size="45" type="string"/>
+<Field name="datp_NumeroDocumento" size="45" type="string"/>
+<Field name="datp_NombresCompletos" size="45" type="string"/>
+<Field name="datp_Genero" size="45" type="string"/>
+<Field name="datp_TipoIdentificacion" size="45" type="string"/>
+<Field name="datp_Trabaja" size="1" type="boolean"/>
+<Field name="acad_IdJornada" size="11" type="integer"/>
+<Field name="acad_Jornada" size="45" type="string"/>
+<Field name="acad_CohorteIngreso" size="45" type="string"/>
+<Field name="acad_idSede" size="11" type="integer"/>
+<Field name="acad_sede" size="45" type="string"/>
+<Field name="Gmail" size="45" type="string"/>
+<Field name="finan_idEstadoFinanciero" size="11" type="integer"/>
+<Field name="finan_Estadofinanciero" size="45" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" name="notas_p" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\n" type="delimited">
+<Field name="idMateria" size="45" type="string"/>
+<Field name="Materia" size="200" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata5">
+<Record fieldDelimiter=";" name="notas_p" recordDelimiter="\n" type="delimited">
 <Field name="id" size="11" type="integer"/>
-<Field name="id_estudiante" size="45" type="string"/>
-<Field name="primer_nombre" size="45" type="string"/>
-<Field name="segundo_nombre" size="45" type="string"/>
-<Field name="primer_apellido" size="45" type="string"/>
-<Field name="segundo_apellido" size="45" type="string"/>
-<Field format="yyyy-MM-dd" name="fecha_nacimiento" size="10" type="date"/>
-<Field name="estado_civil" size="45" type="string"/>
-<Field name="estrato" size="45" type="string"/>
-<Field name="becado" size="1" type="boolean"/>
-<Field name="sexo" size="1" type="string"/>
-<Field name="trabaja_actualmente" size="1" type="boolean"/>
-<Field format="yyyy-MM-dd" name="fecha_ingreso_universidad" size="10" type="date"/>
-<Field format="yyyy-MM-dd" name="fecha_graduacion_universidadl" size="10" type="date"/>
+<Field name="IdCodigo" size="45" type="string"/>
+<Field name="AnoPeriEstu" size="45" type="string"/>
+<Field name="AnoPeriodo" size="45" type="string"/>
+<Field name="CodigoMateria" size="45" type="string"/>
+<Field name="IdGrupo" size="45" type="string"/>
+<Field name="Materia" size="200" type="string"/>
+<Field name="TipoNota" size="45" type="string"/>
+<Field name="Nota" size="22" type="number"/>
+<Field name="Estudiante" size="100" type="string"/>
+<Field name="Semestre" size="11" type="integer"/>
+<Field name="Programa" size="100" type="string"/>
+<Field name="Jornada" size="45" type="string"/>
+<Field name="Aprobo" size="45" type="string"/>
+<Field name="IdArea" size="45" type="string"/>
+<Field name="Area" size="45" type="string"/>
+<Field name="IdSede" size="11" type="integer"/>
+<Field name="Sede" size="45" type="string"/>
+<Field name="IdEstudiante" size="45" type="string"/>
+<Field name="IdPrograma" size="11" type="integer"/>
+<Field name="Credito" size="11" type="integer"/>
+<Field name="NotaCredito" size="22" type="number"/>
+<Field name="Graduado" size="45" type="string"/>
+<Field name="email" size="200" type="string"/>
+<Field name="PaisMovilidad" size="45" type="string"/>
+<Field name="CiudadMovilidad" size="45" type="string"/>
+<Field name="UniversidadMovilidad" size="45" type="string"/>
+<Field name="IdAno" size="45" type="string"/>
+<Field name="IdPeriodo" size="11" type="integer"/>
+<Field name="ProgramaPeriodo" size="45" type="string"/>
+<Field name="Cohorte" size="45" type="string"/>
+<Field name="DepartamentoAcademico" size="45" type="string"/>
+<Field name="PrimiparoInstitucion" size="45" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata2">
-<Record fieldDelimiter=";" name="estudiante" recordDelimiter="\n" type="delimited">
-<Field name="codigo" size="11" type="integer"/>
-<Field name="nombre" size="100" type="string"/>
-<Field format="yyyy-MM-dd" name="fecha_nacimiento" size="10" type="date"/>
-<Field name="sexo" size="1" type="string"/>
-<Field name="estrato" size="1" type="integer"/>
-<Field name="estado_civil" size="1" type="string"/>
-<Field name="tiene_beca" size="1" type="boolean"/>
-<Field format="yyyy-MM-dd" name="fecha_ingreso" size="10" type="date"/>
-<Field name="graduado" size="1" type="boolean"/>
-<Field name="convenio_univesitario" size="1" type="boolean"/>
-<Field name="trabaja" size="1" type="boolean"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata1">
-<Record fieldDelimiter=";" name="informaciom_semestre_estudiante" recordDelimiter="\n" type="delimited">
-<Field name="id" size="11" type="integer"/>
-<Field name="id_estudiante" size="45" type="string"/>
-<Field name="anio" size="45" type="string"/>
-<Field name="periodo" size="45" type="string"/>
-<Field name="materia" size="45" type="string"/>
-<Field name="nota_primer_corte" size="22" type="number"/>
-<Field name="nota_segundo_corte" size="22" type="number"/>
-<Field name="nota_tercer_corte" size="22" type="number"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata3">
+<Metadata id="Metadata7">
 <Record fieldDelimiter=";" name="semestre" recordDelimiter="\n" type="delimited">
-<Field name="id_semestre" size="11" type="integer"/>
+<Field name="id_semestre" size="6" type="string"/>
+<Field name="Anno" size="4" type="string"/>
+<Field name="periodo" size="4" type="integer"/>
+<Field name="cant_estudiantes" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" name="semestre" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\n" type="delimited">
+<Field name="id_semestre" size="6" type="string"/>
 <Field name="Anno" size="4" type="string"/>
 <Field name="periodo" size="4" type="integer"/>
 <Field name="cant_estudiantes" size="11" type="integer"/>
@@ -62,31 +117,48 @@
 <Dictionary/>
 </Global>
 <Phase number="0">
-<Node dbConnection="JDBC1" guiName="DBInputTable" guiX="78" guiY="28" id="DBINPUT_TABLE" type="DB_INPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[select * from \`heroku_94b598c4e735470\`.\`datos_filtrados_estudiantes\`]]></attr>
+<Node dbConnection="JDBC1" guiName="DBInputTable" guiX="51" guiY="78" id="DBINPUT_TABLE" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select distinct($acad_codigoEstudiante:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`acad_codigoEstudiante\`) as acad_codigoEstudiante, $datp_NumeroDocumento:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`datp_NumeroDocumento\`,$datp_NombresCompletos:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`datp_NombresCompletos\`,$datp_Genero:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`datp_Genero\`,$datp_TipoIdentificacion:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`datp_TipoIdentificacion\`,$datp_Trabaja:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`datp_Trabaja\`,$acad_CohorteIngreso:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`acad_CohorteIngreso\`,$acad_idSede:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`acad_idSede\`,$acad_sede:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`acad_sede\`,$finan_idEstadoFinanciero:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`finan_idEstadoFinanciero\`,$finan_Estadofinanciero:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`finan_Estadofinanciero\`,$Gmail:=\`heroku_94b598c4e735470\`.\`matriculados\`.\`Gmail\`
+from \`heroku_94b598c4e735470\`.\`matriculados\`
+order by acad_codigoEstudiante]]></attr>
 </Node>
-<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="523" guiY="28" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`estudiante\` (\`codigo\`, \`nombre\`, \`fecha_nacimiento\`, \`sexo\`, \`estrato\`, \`estado_civil\`, \`tiene_beca\`, \`fecha_ingreso\`, \`graduado\`, \`convenio_univesitario\`, \`trabaja\`)
-VALUES ($codigo, $nombre, $fecha_nacimiento, $sexo, $estrato, $estado_civil, $tiene_beca, $fecha_ingreso, $graduado, $convenio_univesitario, $trabaja)]]></attr>
+<Node dbConnection="JDBC1" guiName="DBInputTable" guiX="51" guiY="200" id="DBINPUT_TABLE1" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select DISTINCT(\`heroku_94b598c4e735470\`.\`notas_p\`.\`CodigoMateria\`),\`heroku_94b598c4e735470\`.\`notas_p\`.\`Materia\`
+from \`heroku_94b598c4e735470\`.\`notas_p\`]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="323" guiY="28" id="REFORMAT" type="REFORMAT">
+<Node dbConnection="JDBC1" guiName="DBInputTable" guiX="45" guiY="370" id="DBINPUT_TABLE3" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from \`heroku_94b598c4e735470\`.\`notas_p\`
+order by \`heroku_94b598c4e735470\`.\`notas_p\`.Cohorte]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="662" guiY="-33" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`estudiante\` (\`codigo\`, \`nombre\`, \`sexo\`, \`graduado\`, \`convenio_univesitario\`, \`trabaja\`, \`legal_id_estudiante\`, \`tipo_legal_id\`, \`jornada\`, \`anno_periodo_ing\`)
+VALUES ($codigo, $nombre, $sexo, $graduado, $convenio_univesitario, $trabaja, $legal_id_estudiante, $tipo_legal_id, $jornada, $anno_periodo_ing)]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="698" guiY="200" id="DBOUTPUT_TABLE1" type="DB_OUTPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`materia\` (\`idMateria\`, \`nombre_materia\`)
+VALUES ($idMateria, $nombre_materia)]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="698" guiY="290" id="DBOUTPUT_TABLE3" type="DB_OUTPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`semestre\` (\`id_semestre\`, \`Anno\`, \`periodo\`, \`cant_estudiantes\`)
+VALUES ($id_semestre, $Anno, $periodo, $cant_estudiantes)]]></attr>
+</Node>
+<Node dedupKey="acad_codigoEstudiante(a)" guiName="Dedup" guiX="248" guiY="60" id="DEDUP" type="DEDUP"/>
+<Node dedupKey="Cohorte(a)" guiName="Dedup" guiX="248" guiY="370" id="DEDUP1" type="DEDUP"/>
+<Node guiName="Reformat" guiX="430" guiY="-33" id="REFORMAT" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
 function integer transform() {
-	$out.0.nombre = $in.0.primer_nombre + " " +
-	 $in.0.segundo_nombre + " " +
-	 $in.0.primer_apellido + " " +
-	 $in.0.segundo_apellido;
-	$out.0.fecha_nacimiento = $in.0.fecha_nacimiento;
-	$out.0.sexo = $in.0.sexo;
-	$out.0.estrato = str2integer($in.0.estrato);
-	$out.0.estado_civil = charAt(upperCase($in.0.estado_civil),0);
-	$out.0.tiene_beca = $in.0.becado;
-	$out.0.fecha_ingreso = $in.0.fecha_ingreso_universidad;
-	$out.0.trabaja = $in.0.trabaja_actualmente;
-	$out.0.graduado = isEmpty(date2str($in.0.fecha_graduacion_universidadl, "yyyy-MM-dd"));
-	$out.0.convenio_univesitario = false;
+	$out.0.codigo = $in.0.acad_codigoEstudiante;
+	$out.0.nombre = $in.0.datp_NombresCompletos;
+	$out.0.sexo = $in.0.datp_Genero;
+	$out.0.trabaja = $in.0.datp_Trabaja;
+	$out.0.tipo_legal_id = $in.0.datp_TipoIdentificacion;
+	$out.0.legal_id_estudiante = $in.0.datp_NumeroDocumento;
+	$out.0.jornada = $in.0.acad_Jornada;
+	$out.0.anno_periodo_ing = $in.0.acad_CohorteIngreso;
+	$out.0.convenio_univesitario = ($in.0.acad_idSede==65);
+	$out.0.graduado = ($in.0.finan_Estadofinanciero == null);
 
 	return ALL;
 }
@@ -110,7 +182,122 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Edge fromNode="DBINPUT_TABLE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="REFORMAT:0"/>
-<Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
+<Node guiName="Reformat" guiX="406" guiY="200" id="REFORMAT1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.idMateria = $in.0.idMateria;
+	$out.0.nombre_materia = $in.0.Materia;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="406" guiY="290" id="REFORMAT3" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.id_semestre = $in.0.Cohorte;
+	$out.0.Anno = substring($in.0.Cohorte,0 ,4);
+	$out.0.periodo = str2integer(substring($in.0.Cohorte,4));
+	$out.0.cant_estudiantes = 0;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="DBINPUT_TABLE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="DEDUP:0"/>
+<Edge fromNode="DBINPUT_TABLE1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="REFORMAT1:0"/>
+<Edge fromNode="DBINPUT_TABLE3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="DEDUP1:0"/>
+<Edge fromNode="DEDUP:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" outPort="Port 0 (unique)" persistedImplicitMetadata="Metadata0" toNode="REFORMAT:0"/>
+<Edge fromNode="DEDUP1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (in)" outPort="Port 0 (unique)" persistedImplicitMetadata="Metadata5" toNode="REFORMAT3:0"/>
+<Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
+<Edge fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE1:0"/>
+<Edge fromNode="REFORMAT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE3:0"/>
+</Phase>
+<Phase number="1">
+<Node dbConnection="JDBC1" guiName="DBInputTable" guiX="33" guiY="539" id="DBINPUT_TABLE2" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from \`heroku_94b598c4e735470\`.\`notas_p\`
+order by  \`heroku_94b598c4e735470\`.\`notas_p\`.Cohorte]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="640" guiY="539" id="DBOUTPUT_TABLE2" maxErrors="4000" type="DB_OUTPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`materia_por_semestre_estudiante\` (\`id_materia\`, \`id_semestre\`, \`id_estudiante\`, \`nota_definitiva\`, \`estudiante_codigo\`, \`Semestre_id_semestre\`, \`Materia_idMateria\`)
+VALUES ($id_materia, $id_semestre, $id_estudiante, $nota_definitiva, $estudiante_codigo, $Semestre_id_semestre, $Materia_idMateria)]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="255" guiY="539" id="REFORMAT2" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.id_materia = $in.0.CodigoMateria;
+	$out.0.id_semestre = $in.0.Cohorte;
+	$out.0.id_estudiante = $in.0.IdCodigo;
+	$out.0.nota_definitiva = $in.0.Nota;
+	$out.0.estudiante_codigo = $in.0.IdCodigo;
+	$out.0.Semestre_id_semestre = $in.0.Cohorte;
+	$out.0.Materia_idMateria = $in.0.CodigoMateria;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="DBINPUT_TABLE2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="REFORMAT2:0"/>
+<Edge fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata6" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE2:0"/>
 </Phase>
 </Graph>
