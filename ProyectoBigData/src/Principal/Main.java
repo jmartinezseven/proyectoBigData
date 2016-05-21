@@ -35,7 +35,9 @@ public class Main {
         TwitterFactory tf = new TwitterFactory(cf.build());
         QueryTwitter(tf, "poligran");
         QueryTwitter(tf, "ingenieria de sistemas");
-
+        QueryTwitter(tf, "materias ingenieria");
+        QueryTwitter(tf, "Horario Poligran");
+        QueryTwitter(tf, "Politenico Grancolombiano");
     }
     
     public static void QueryTwitter(TwitterFactory tf, String PalabraClave){
