@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Graph author="Carlos" created="Wed May 04 00:55:07 COT 2016" guiVersion="4.1.3" id="1462343744498" licenseCode="CLP1DSEVEN58088402EX" licenseType="Evaluation" modified="Fri May 20 01:59:26 COT 2016" modifiedBy="jsmartinez" name="LoadTableInformacionSemestreEstudiante" revision="1.62" showComponentDetails="true">
+<Graph author="Carlos" created="Wed May 04 00:55:07 COT 2016" guiVersion="4.1.3" id="1462343744498" licenseCode="CLP1DNONEX86645084EX" licenseType="Evaluation" modified="Thu May 26 01:22:38 COT 2016" modifiedBy="Carlos" name="LoadTableInformacionSemestreEstudiante" revision="1.64" showComponentDetails="true">
 <Global>
 <Metadata id="Metadata3" previewAttachmentCharset="ISO-8859-1">
 <Record fieldDelimiter="|" name="consolidado_excels_Graduados" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
@@ -283,25 +283,34 @@
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>
 </GraphParameters>
+<RichTextNote backgroundColor="FAF6D6" folded="false" fontSize="medium" height="288" id="Note0" textColor="444444" width="1026" x="-229" y="62">
+<attr name="text"><![CDATA[h3. Matriculados]]></attr>
+</RichTextNote>
+<RichTextNote backgroundColor="FAF6D6" folded="false" fontSize="medium" height="264" id="Note1" textColor="444444" width="1040" x="-236" y="373">
+<attr name="text"><![CDATA[h3. Notas Estudiantes]]></attr>
+</RichTextNote>
+<RichTextNote backgroundColor="FAF6D6" folded="false" fontSize="medium" height="248" id="Note2" textColor="444444" width="1041" x="-237" y="656">
+<attr name="text"><![CDATA[h3. Graduados]]></attr>
+</RichTextNote>
 <Dictionary/>
 </Global>
 <Phase number="0">
-<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="633" guiY="509" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="659" guiY="420" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_94b598c4e735470\`.\`notas_p\` (\`id\`, \`IdCodigo\`, \`AnoPeriEstu\`, \`AnoPeriodo\`, \`CodigoMateria\`, \`IdGrupo\`, \`Materia\`, \`TipoNota\`, \`Nota\`, \`Estudiante\`, \`Semestre\`, \`Programa\`, \`Jornada\`, \`Aprobo\`, \`IdArea\`, \`Area\`, \`IdSede\`, \`Sede\`, \`IdEstudiante\`, \`IdPrograma\`, \`Credito\`, \`NotaCredito\`, \`Graduado\`, \`email\`, \`PaisMovilidad\`, \`CiudadMovilidad\`, \`UniversidadMovilidad\`, \`IdAno\`, \`IdPeriodo\`, \`ProgramaPeriodo\`, \`Cohorte\`, \`DepartamentoAcademico\`, \`PrimiparoInstitucion\`)
 VALUES ($id, $IdCodigo, $AnoPeriEstu, $AnoPeriodo, $CodigoMateria, $IdGrupo, $Materia, $TipoNota, $Nota, $Estudiante, $Semestre, $Programa, $Jornada, $Aprobo, $IdArea, $Area, $IdSede, $Sede, $IdEstudiante, $IdPrograma, $Credito, $NotaCredito, $Graduado, $email, $PaisMovilidad, $CiudadMovilidad, $UniversidadMovilidad, $IdAno, $IdPeriodo, $ProgramaPeriodo, $Cohorte, $DepartamentoAcademico, $PrimiparoInstitucion)]]></attr>
 </Node>
-<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="745" guiY="218" id="DBOUTPUT_TABLE1" type="DB_OUTPUT_TABLE">
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="655" guiY="117" id="DBOUTPUT_TABLE1" type="DB_OUTPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_94b598c4e735470\`.\`matriculados\` (\`id\`, \`base_codPrimiparoPoli\`, \`base_PrimiparoPoli\`, \`base_idAnho\`, \`base_idPeriodo\`, \`base_UsuarioAppInscripcion\`, \`base_AppInscripcion\`, \`datp_NumeroDocumento\`, \`datp_NombresCompletos\`, \`datp_Nombres\`, \`datp_Apellido1\`, \`datp_Apellido2\`, \`datp_direccionResidencia\`, \`datp_TelefonoPrincipal\`, \`datp_correoElectronico\`, \`datp_Genero\`, \`datp_Celular\`, \`datp_TipoIdentificacion\`, \`datp_idCiudad\`, \`datp_Ciudad\`, \`datp_Trabaja\`, \`datp_NombreEmpresa\`, \`datp_TelefonoEmpresa\`, \`datp_DireccionEmpresa\`, \`acad_Movilidad\`, \`acad_anhoPeriodo\`, \`acad_codigoEstudiante\`, \`acad_IdJornada\`, \`acad_Jornada\`, \`acad_idPrograma\`, \`acad_Programa\`, \`acad_idNivel\`, \`acad_Nivel\`, \`acad_CohorteIngreso\`, \`acad_Semestre\`, \`acad_idSede\`, \`acad_sede\`, \`acad_idEstadoAcademico\`, \`acad_EstadoAcademico\`, \`acad_consecutivoWEB\`, \`acad_Titulo\`, \`acad_idTipoSede\`, \`acad_TipoSede\`, \`acad_idFacultad\`, \`acad_Facultad\`, \`acad_idCSU\`, \`acad_CSU\`, \`acad_IdTipoDeCSU\`, \`acad_TipoDeCSU\`, \`acad_ZonaDeVenta\`, \`acad_FechaOferta\`, \`acad_otraUniversidad\`, \`acad_Anho\`, \`acad_SNIES\`, \`acad_UnidadOperativa\`, \`finan_numeroReciboPago\`, \`finan_valorMatricula\`, \`finan_valorOrdinario\`, \`finan_valorExtraOrdinario\`, \`finan_DiferenciaValoresMatricula\`, \`finan_PagoExtraordinario\`, \`finan_MedioPago\`, \`finan_FechaPago\`, \`finan_EntidadBancaria\`, \`finan_ValorPagado\`, \`finan_idEstadoFinanciero\`, \`finan_Estadofinanciero\`, \`finan_SemanaMatricula\`, \`finana_MediaMatricula\`, \`finan_descuento\`, \`Gmail\`, \`Reintegro\`)
 VALUES ($id, $base_codPrimiparoPoli, $base_PrimiparoPoli, $base_idAnho, $base_idPeriodo, $base_UsuarioAppInscripcion, $base_AppInscripcion, $datp_NumeroDocumento, $datp_NombresCompletos, $datp_Nombres, $datp_Apellido1, $datp_Apellido2, $datp_direccionResidencia, $datp_TelefonoPrincipal, $datp_correoElectronico, $datp_Genero, $datp_Celular, $datp_TipoIdentificacion, $datp_idCiudad, $datp_Ciudad, $datp_Trabaja, $datp_NombreEmpresa, $datp_TelefonoEmpresa, $datp_DireccionEmpresa, $acad_Movilidad, $acad_anhoPeriodo, $acad_codigoEstudiante, $acad_IdJornada, $acad_Jornada, $acad_idPrograma, $acad_Programa, $acad_idNivel, $acad_Nivel, $acad_CohorteIngreso, $acad_Semestre, $acad_idSede, $acad_sede, $acad_idEstadoAcademico, $acad_EstadoAcademico, $acad_consecutivoWEB, $acad_Titulo, $acad_idTipoSede, $acad_TipoSede, $acad_idFacultad, $acad_Facultad, $acad_idCSU, $acad_CSU, $acad_IdTipoDeCSU, $acad_TipoDeCSU, $acad_ZonaDeVenta, $acad_FechaOferta, $acad_otraUniversidad, $acad_Anho, $acad_SNIES, $acad_UnidadOperativa, $finan_numeroReciboPago, $finan_valorMatricula, $finan_valorOrdinario, $finan_valorExtraOrdinario, $finan_DiferenciaValoresMatricula, $finan_PagoExtraordinario, $finan_MedioPago, $finan_FechaPago, $finan_EntidadBancaria, $finan_ValorPagado, $finan_idEstadoFinanciero, $finan_Estadofinanciero, $finan_SemanaMatricula, $finana_MediaMatricula, $finan_descuento, $Gmail, $Reintegro)]]></attr>
 </Node>
-<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="540" guiY="362" id="DBOUTPUT_TABLE2" type="DB_OUTPUT_TABLE"/>
-<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="419" guiY="645" id="DBOUTPUT_TABLE3" type="DB_OUTPUT_TABLE"/>
-<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="684" guiY="752" id="DBOUTPUT_TABLE4" type="DB_OUTPUT_TABLE">
+<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="450" guiY="261" id="DBOUTPUT_TABLE2" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="445" guiY="556" id="DBOUTPUT_TABLE3" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="657" guiY="677" id="DBOUTPUT_TABLE4" type="DB_OUTPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_94b598c4e735470\`.\`matriculados\` (\`id\`, \`base_codPrimiparoPoli\`, \`base_PrimiparoPoli\`, \`base_idAnho\`, \`base_idPeriodo\`, \`base_UsuarioAppInscripcion\`, \`base_AppInscripcion\`, \`datp_NumeroDocumento\`, \`datp_NombresCompletos\`, \`datp_Nombres\`, \`datp_Apellido1\`, \`datp_Apellido2\`, \`datp_direccionResidencia\`, \`datp_TelefonoPrincipal\`, \`datp_correoElectronico\`, \`datp_Genero\`, \`datp_Celular\`, \`datp_TipoIdentificacion\`, \`datp_idCiudad\`, \`datp_Ciudad\`, \`datp_Trabaja\`, \`datp_NombreEmpresa\`, \`datp_TelefonoEmpresa\`, \`datp_DireccionEmpresa\`, \`acad_Movilidad\`, \`acad_anhoPeriodo\`, \`acad_codigoEstudiante\`, \`acad_IdJornada\`, \`acad_Jornada\`, \`acad_idPrograma\`, \`acad_Programa\`, \`acad_idNivel\`, \`acad_Nivel\`, \`acad_CohorteIngreso\`, \`acad_Semestre\`, \`acad_idSede\`, \`acad_sede\`, \`acad_idEstadoAcademico\`, \`acad_EstadoAcademico\`, \`acad_consecutivoWEB\`, \`acad_Titulo\`, \`acad_idTipoSede\`, \`acad_TipoSede\`, \`acad_idFacultad\`, \`acad_Facultad\`, \`acad_idCSU\`, \`acad_CSU\`, \`acad_IdTipoDeCSU\`, \`acad_TipoDeCSU\`, \`acad_ZonaDeVenta\`, \`acad_FechaOferta\`, \`acad_otraUniversidad\`, \`acad_Anho\`, \`acad_SNIES\`, \`acad_UnidadOperativa\`, \`finan_numeroReciboPago\`, \`finan_valorMatricula\`, \`finan_valorOrdinario\`, \`finan_valorExtraOrdinario\`, \`finan_DiferenciaValoresMatricula\`, \`finan_PagoExtraordinario\`, \`finan_MedioPago\`, \`finan_FechaPago\`, \`finan_EntidadBancaria\`, \`finan_ValorPagado\`, \`finan_idEstadoFinanciero\`, \`finan_Estadofinanciero\`, \`finan_SemanaMatricula\`, \`finana_MediaMatricula\`, \`finan_descuento\`, \`Gmail\`, \`Reintegro\`)
 VALUES ($id, $base_codPrimiparoPoli, $base_PrimiparoPoli, $base_idAnho, $base_idPeriodo, $base_UsuarioAppInscripcion, $base_AppInscripcion, $datp_NumeroDocumento, $datp_NombresCompletos, $datp_Nombres, $datp_Apellido1, $datp_Apellido2, $datp_direccionResidencia, $datp_TelefonoPrincipal, $datp_correoElectronico, $datp_Genero, $datp_Celular, $datp_TipoIdentificacion, $datp_idCiudad, $datp_Ciudad, $datp_Trabaja, $datp_NombreEmpresa, $datp_TelefonoEmpresa, $datp_DireccionEmpresa, $acad_Movilidad, $acad_anhoPeriodo, $acad_codigoEstudiante, $acad_IdJornada, $acad_Jornada, $acad_idPrograma, $acad_Programa, $acad_idNivel, $acad_Nivel, $acad_CohorteIngreso, $acad_Semestre, $acad_idSede, $acad_sede, $acad_idEstadoAcademico, $acad_EstadoAcademico, $acad_consecutivoWEB, $acad_Titulo, $acad_idTipoSede, $acad_TipoSede, $acad_idFacultad, $acad_Facultad, $acad_idCSU, $acad_CSU, $acad_IdTipoDeCSU, $acad_TipoDeCSU, $acad_ZonaDeVenta, $acad_FechaOferta, $acad_otraUniversidad, $acad_Anho, $acad_SNIES, $acad_UnidadOperativa, $finan_numeroReciboPago, $finan_valorMatricula, $finan_valorOrdinario, $finan_valorExtraOrdinario, $finan_DiferenciaValoresMatricula, $finan_PagoExtraordinario, $finan_MedioPago, $finan_FechaPago, $finan_EntidadBancaria, $finan_ValorPagado, $finan_idEstadoFinanciero, $finan_Estadofinanciero, $finan_SemanaMatricula, $finana_MediaMatricula, $finan_descuento, $Gmail, $Reintegro)]]></attr>
 </Node>
-<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="404" guiY="910" id="DBOUTPUT_TABLE5" type="DB_OUTPUT_TABLE"/>
-<Node guiName="Validator" guiX="215" guiY="268" id="DatosEstudiantesValidator" type="VALIDATOR">
+<Node dbConnection="JDBC0" dbTable="registro_linea_error" fieldMap="$recordNo:=linea_registro;$componentID:=nombre_proceso;$validationMessage:=mensaje_error;" guiName="DBOutputTable" guiX="418" guiY="828" id="DBOUTPUT_TABLE5" type="DB_OUTPUT_TABLE"/>
+<Node guiName="Validator" guiX="125" guiY="167" id="DatosEstudiantesValidator" type="VALIDATOR">
 <attr name="errorMapping"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
@@ -352,7 +361,7 @@ function integer transform() {
 </group>
 ]]></attr>
 </Node>
-<Node guiName="Validator" guiX="106" guiY="509" id="DatosEstudiantesValidator1" type="VALIDATOR">
+<Node guiName="Validator" guiX="136" guiY="458" id="DatosEstudiantesValidator1" type="VALIDATOR">
 <attr name="errorMapping"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
@@ -399,7 +408,7 @@ function integer transform() {
 </group>
 ]]></attr>
 </Node>
-<Node guiName="Validator" guiX="100" guiY="805" id="GraduadosValidator3" type="VALIDATOR">
+<Node guiName="Validator" guiX="114" guiY="723" id="GraduadosValidator3" type="VALIDATOR">
 <attr name="errorMapping"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
@@ -443,10 +452,10 @@ function integer transform() {
 </group>
 ]]></attr>
 </Node>
-<Node fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="ODExcelGraduados" guiX="-243" guiY="805" id="ODEXCEL_GRADUADOS" sheet="Graduados" type="SPREADSHEET_READER"/>
-<Node dataPolicy="strict" fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="ODExcelMatriculados" guiX="-122" guiY="268" id="ODEXCEL_MATRICULADOS" sheet="MAtriculados_II_Final" type="SPREADSHEET_READER"/>
-<Node fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="ODExcelNotasEstudiantes" guiX="-243" guiY="509" id="ODEXCEL_NOTAS_ESTUDIANTES" sheet="Notas_P_Final" type="SPREADSHEET_READER"/>
-<Node guiName="Reformat" guiX="424" guiY="509" id="REFORMAT" type="REFORMAT">
+<Node fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="ODExcelGraduados" guiX="-229" guiY="723" id="ODEXCEL_GRADUADOS" sheet="Graduados" type="SPREADSHEET_READER"/>
+<Node dataPolicy="strict" fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="ODExcelMatriculados" guiX="-212" guiY="167" id="ODEXCEL_MATRICULADOS" sheet="MAtriculados_II_Final" type="SPREADSHEET_READER"/>
+<Node fileURL="${DATAIN_DIR}/consolidado_excels.xlsx" guiName="ODExcelNotasEstudiantes" guiX="-212" guiY="458" id="ODEXCEL_NOTAS_ESTUDIANTES" sheet="Notas_P_Final" type="SPREADSHEET_READER"/>
+<Node guiName="Reformat" guiX="450" guiY="420" id="REFORMAT" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
@@ -506,7 +515,7 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="530" guiY="218" id="REFORMAT1" type="REFORMAT">
+<Node guiName="Reformat" guiX="440" guiY="117" id="REFORMAT1" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 
 // Transforms input record into output record.
@@ -605,7 +614,7 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="409" guiY="759" id="REFORMAT2" type="REFORMAT">
+<Node guiName="Reformat" guiX="423" guiY="677" id="REFORMAT2" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 
 // Transforms input record into output record.

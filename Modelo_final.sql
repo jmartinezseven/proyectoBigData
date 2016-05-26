@@ -88,6 +88,36 @@ CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`materia_por_semestre_estudi
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `heroku_363d731a3c8dc48`.`redes_sociales`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `heroku_363d731a3c8dc48`.`redes_sociales` ;
+
+CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`redes_sociales` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `usuario` VARCHAR(100) NOT NULL,
+  `tweet` VARCHAR(500) NOT NULL,
+  `lugar` VARCHAR(100) NULL,
+  `palabra_clave` VARCHAR(100) NOT NULL,
+  `source` VARCHAR(100) NOT NULL,
+  `fecha` VARCHAR(200) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `heroku_363d731a3c8dc48`.`materia_por_semestre_estudiante_desertores`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `heroku_363d731a3c8dc48`.`materia_por_semestre_estudiante_desertores` ;
+
+CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`materia_por_semestre_estudiante_desertores` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_materia` VARCHAR(10) NULL,
+  `id_semestre` VARCHAR(6) NULL,
+  `id_estudiante` VARCHAR(45) NULL,
+  `nota_definitiva` DOUBLE NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

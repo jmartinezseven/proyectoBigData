@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Carlos" created="Wed May 25 22:45:30 COT 2016" guiVersion="4.1.3" id="1464235016681" licenseCode="CLP1DNONEX86645084EX" licenseType="Evaluation" modified="Thu May 26 01:13:25 COT 2016" modifiedBy="Carlos" name="redesSocialesETL" revision="1.5" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata0" previewAttachment="${DATAIN_DIR}/Info.txt" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="|" label="Info.txt" name="Info_txt" previewAttachment="${DATAIN_DIR}/Info.txt" previewAttachmentCharset="ISO-8859-1" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="0" type="delimited">
+<Field name="User" type="string"/>
+<Field name="Tweet" type="string"/>
+<Field name="lugar" type="string"/>
+<Field name="date" type="string"/>
+<Field name="palabraClave" type="string"/>
+<Field eofAsDelimiter="true" name="source" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" name="redes_sociales" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\n" type="delimited">
+<Field name="id" size="11" type="integer"/>
+<Field name="usuario" size="100" type="string"/>
+<Field name="tweet" size="500" type="string"/>
+<Field name="lugar" size="100" type="string"/>
+<Field name="palabra_clave" size="100" type="string"/>
+<Field name="source" size="100" type="string"/>
+<Field name="fecha" size="200" type="string"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_363d731a3c8dc48" id="JDBC0" jdbcSpecific="MYSQL" name="MySql_Out" password="1ab3359e" type="JDBC" user="bc80edeed62fcf"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<RichTextNote backgroundColor="FAF6D6" folded="false" fontSize="medium" height="166" id="Note0" textColor="444444" width="786" x="39" y="43">
+<attr name="text"><![CDATA[h3. SocialDataETL]]></attr>
+</RichTextNote>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="666" guiY="90" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`redes_sociales\` (\`id\`, \`usuario\`, \`tweet\`, \`lugar\`, \`palabra_clave\`, \`source\`, \`fecha\`)
+VALUES ($id, $usuario, $tweet, $lugar, $palabra_clave, $source, $fecha)]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="374" guiY="90" id="REFORMAT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.usuario = $in.0.User;
+	$out.0.tweet = $in.0.Tweet;
+	$out.0.lugar = $in.0.lugar;
+	$out.0.palabra_clave = $in.0.palabraClave;
+	$out.0.source = $in.0.source;
+	$out.0.fecha = $in.0.date;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node fileURL="${DATAIN_DIR}/Info.txt" guiName="UniversalDataReader" guiX="55" guiY="90" id="UNIVERSAL_DATA_READER" type="DATA_READER"/>
+<Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="REFORMAT:0"/>
+</Phase>
+</Graph>
