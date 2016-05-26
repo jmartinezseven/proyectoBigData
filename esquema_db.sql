@@ -1,76 +1,89 @@
+-- MySQL Workbench Forward Engineering
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 
+-- -----------------------------------------------------
+-- Table `heroku_363d731a3c8dc48`.`estudiante`
+-- -----------------------------------------------------
 DROP TABLE IF EXISTS `heroku_363d731a3c8dc48`.`estudiante` ;
 
 CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`estudiante` (
-  `codigo` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(100) NOT NULL,
-  `fecha_nacimiento` DATE NOT NULL,
-  `sexo` CHAR(1) NOT NULL,
-  `estrato` SMALLINT(1) NOT NULL,
-  `estado_civil` CHAR(1) NULL,
-  `tiene_beca` TINYINT(1) NOT NULL,
-  `fecha_ingreso` DATE NOT NULL,
-  `graduado` TINYINT(1) NOT NULL,
+  `codigo` VARCHAR(45) NOT NULL,
+  `nombre` VARCHAR(100) NULL,
+  `sexo` CHAR(1) NULL,
+  `graduado` TINYINT(1) NULL,
   `convenio_univesitario` TINYINT(1) NULL,
-  `trabaja` TINYINT(1) NOT NULL,
+  `trabaja` TINYINT(1) NULL,
+  `legal_id_estudiante` VARCHAR(45) NULL,
+  `tipo_legal_id` VARCHAR(5) NULL,
+  `jornada` VARCHAR(45) NULL,
+  `anno_periodo_ing` VARCHAR(5) NULL,
   PRIMARY KEY (`codigo`),
   UNIQUE INDEX `codigo_UNIQUE` (`codigo` ASC))
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `heroku_363d731a3c8dc48`.`Semestre`
+-- -----------------------------------------------------
 DROP TABLE IF EXISTS `heroku_363d731a3c8dc48`.`Semestre` ;
 
 CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`Semestre` (
-  `id_semestre` INT NOT NULL AUTO_INCREMENT,
-  `Anio` VARCHAR(4) NOT NULL,
+  `id_semestre` VARCHAR(6) NOT NULL,
+  `Anno` VARCHAR(4) NOT NULL,
   `periodo` SMALLINT(4) NOT NULL,
-  `estudiante_codigo` INT NOT NULL,
-  `promedio_estudiante_semestre` DOUBLE NULL,
-  PRIMARY KEY (`id_semestre`, `estudiante_codigo`),
-  UNIQUE INDEX `id_semestre_UNIQUE` (`id_semestre` ASC),
-  INDEX `fk_Semestre_estudiante_idx` (`estudiante_codigo` ASC),
-  CONSTRAINT `fk_Semestre_estudiante`
+  `cant_estudiantes` INT NOT NULL,
+  PRIMARY KEY (`id_semestre`),
+  UNIQUE INDEX `id_semestre_UNIQUE` (`id_semestre` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `heroku_363d731a3c8dc48`.`Materia`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `heroku_363d731a3c8dc48`.`Materia` ;
+
+CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`Materia` (
+  `idMateria` VARCHAR(10) NOT NULL,
+  `nombre_materia` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`idMateria`))
+ENGINE = InnoDB
+COMMENT = '			';
+
+
+-- -----------------------------------------------------
+-- Table `heroku_363d731a3c8dc48`.`materia_por_semestre_estudiante`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `heroku_363d731a3c8dc48`.`materia_por_semestre_estudiante` ;
+
+CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`materia_por_semestre_estudiante` (
+  `id_materia` VARCHAR(10) NOT NULL,
+  `id_semestre` VARCHAR(6) NOT NULL,
+  `id_estudiante` VARCHAR(45) NOT NULL,
+  `nota_definitiva` DOUBLE NULL,
+  `estudiante_codigo` VARCHAR(45) NOT NULL,
+  `Semestre_id_semestre` VARCHAR(6) NOT NULL,
+  `Materia_idMateria` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`id_materia`, `id_semestre`, `id_estudiante`),
+  INDEX `fk_materia_por_semestre_estudiante_estudiante_idx` (`estudiante_codigo` ASC),
+  INDEX `fk_materia_por_semestre_estudiante_Semestre1_idx` (`Semestre_id_semestre` ASC),
+  INDEX `fk_materia_por_semestre_estudiante_Materia1_idx` (`Materia_idMateria` ASC),
+  CONSTRAINT `fk_materia_por_semestre_estudiante_estudiante`
     FOREIGN KEY (`estudiante_codigo`)
     REFERENCES `heroku_363d731a3c8dc48`.`estudiante` (`codigo`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
-DROP TABLE IF EXISTS `heroku_363d731a3c8dc48`.`Materias` ;
-
-CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`Materias` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre_materia` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
-DROP TABLE IF EXISTS `heroku_363d731a3c8dc48`.`materias_por_semestre` ;
-
-CREATE TABLE IF NOT EXISTS `heroku_363d731a3c8dc48`.`materias_por_semestre` (
-  `id_semestre` INT NOT NULL,
-  `id_estudiante` INT NOT NULL,
-  `id_materia` INT NOT NULL,
-  `nota_primer_corte` DOUBLE NULL,
-  `nota_segundo_corte` DOUBLE NULL,
-  `nota_tercer_corte` DOUBLE NULL,
-  `nota_definitiva` DOUBLE NULL,
-  PRIMARY KEY (`id_semestre`, `id_estudiante`, `id_materia`),
-  INDEX `fk_Semestre_has_Materias_Materias1_idx` (`id_materia` ASC),
-  INDEX `fk_Semestre_has_Materias_Semestre1_idx` (`id_semestre` ASC, `id_estudiante` ASC),
-  CONSTRAINT `fk_Semestre_has_Materias_Semestre1`
-    FOREIGN KEY (`id_semestre` , `id_estudiante`)
-    REFERENCES `heroku_363d731a3c8dc48`.`Semestre` (`id_semestre` , `estudiante_codigo`)
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_materia_por_semestre_estudiante_Semestre1`
+    FOREIGN KEY (`Semestre_id_semestre`)
+    REFERENCES `heroku_363d731a3c8dc48`.`Semestre` (`id_semestre`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Semestre_has_Materias_Materias1`
-    FOREIGN KEY (`id_materia`)
-    REFERENCES `heroku_363d731a3c8dc48`.`Materias` (`id`)
+  CONSTRAINT `fk_materia_por_semestre_estudiante_Materia1`
+    FOREIGN KEY (`Materia_idMateria`)
+    REFERENCES `heroku_363d731a3c8dc48`.`Materia` (`idMateria`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
