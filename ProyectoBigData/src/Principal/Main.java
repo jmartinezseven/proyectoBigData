@@ -56,7 +56,7 @@ public class Main {
 	            try{
 		 			FileWriter escribirArchivo = new FileWriter(archivo, true);
 		 			BufferedWriter buffer = new BufferedWriter(escribirArchivo);
-		 			buffer.write("@" + tweet.getUser().getScreenName() + " :: " + tweet.getText() + "::" +tweet.getPlace()+ "::"+ tweet.getCreatedAt()+"::"+PalabraClave+"::"+"Twitter");
+		 			buffer.write(tweet.getUser().getScreenName() + "|" + tweet.getText() + "|" +tweet.getPlace()+ "|"+ tweet.getCreatedAt()+"|"+PalabraClave+"|"+"Twitter");
 		 			buffer.newLine();
 		 			buffer.close();
 		 		}catch(Exception e){
