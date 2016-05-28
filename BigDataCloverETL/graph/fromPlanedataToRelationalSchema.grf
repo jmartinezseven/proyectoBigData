@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Graph author="Carlos" created="Mon May 09 11:47:50 COT 2016" guiVersion="4.1.3" id="1462821726264" licenseCode="CLP1DNONEX86645084EX" licenseType="Evaluation" modified="Thu May 26 03:51:02 COT 2016" modifiedBy="Carlos" name="fromPlanedataToRelationalSchema" revision="1.41" showComponentDetails="true">
+<Graph author="Carlos" created="Mon May 09 11:47:50 COT 2016" guiVersion="4.1.3" id="1462821726264" licenseCode="CLP1DSEVEN58088402EX" licenseType="Evaluation" modified="Fri May 27 23:57:01 COT 2016" modifiedBy="jsmartinez" name="fromPlanedataToRelationalSchema" revision="1.42" showComponentDetails="true">
 <Global>
 <Metadata id="Metadata1" previewAttachmentCharset="ISO-8859-1">
 <Record fieldDelimiter=";" name="estudiante" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\n" type="delimited">
@@ -118,21 +118,6 @@
 <Field name="cant_estudiantes" size="11" type="integer"/>
 </Record>
 </Metadata>
-<MetadataGroup name="Implicit metadata" type="implicit">
-<Metadata id="__dynamic_metadata_DBOUTPUT_TABLE2__outMetadata">
-<Record fieldDelimiter=";" name="materia_por_semestre_estudiante" recordDelimiter="\n" type="delimited">
-<Field name="id_materia" size="10" type="string"/>
-<Field name="id_semestre" size="6" type="string"/>
-<Field name="id_estudiante" size="45" type="string"/>
-<Field name="nota_definitiva" size="22" trim="true" type="number"/>
-<Field name="estudiante_codigo" size="45" type="string"/>
-<Field name="Semestre_id_semestre" size="6" type="string"/>
-<Field name="Materia_idMateria" size="10" type="string"/>
-<Field delimiter=";" name="ErrCode" type="string"/>
-<Field delimiter="\n" name="ErrText" type="string"/>
-</Record>
-</Metadata>
-</MetadataGroup>
 <Connection database="MYSQL" dbURL="jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_94b598c4e735470" id="JDBC1" jdbcSpecific="MYSQL" name="Mysql_IN" password="9b47547f" type="JDBC" user="bfd0a3a906a8e3"/>
 <Connection database="MYSQL" dbURL="jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_363d731a3c8dc48" id="JDBC0" jdbcSpecific="MYSQL" name="Mysql_OUT" password="1ab3359e" type="JDBC" user="bc80edeed62fcf"/>
 <GraphParameters>
@@ -158,10 +143,6 @@ order by  \`heroku_94b598c4e735470\`.\`notas_p\`.Cohorte]]></attr>
 <Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="710" guiY="497" id="DBOUTPUT_TABLE2" maxErrors="10000" type="DB_OUTPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`materia_por_semestre_estudiante\` (\`id_materia\`, \`id_semestre\`, \`id_estudiante\`, \`nota_definitiva\`, \`estudiante_codigo\`, \`Semestre_id_semestre\`, \`Materia_idMateria\`)
 VALUES ($id_materia, $id_semestre, $id_estudiante, $nota_definitiva, $estudiante_codigo, $Semestre_id_semestre, $Materia_idMateria)]]></attr>
-</Node>
-<Node dbConnection="JDBC0" guiName="DBOutputTable" guiX="1203" guiY="497" id="DBOUTPUT_TABLE4" maxErrors="10000" type="DB_OUTPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[INSERT INTO \`heroku_363d731a3c8dc48\`.\`materia_por_semestre_estudiante_desertores\` (\`id_materia\`, \`id_semestre\`, \`id_estudiante\`, \`nota_definitiva\`)
-VALUES ( $id_materia, $id_semestre, $id_estudiante, $nota_definitiva)]]></attr>
 </Node>
 <Node guiName="Reformat" guiX="483" guiY="497" id="REFORMAT2" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
@@ -198,42 +179,8 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="946" guiY="497" id="REFORMAT4" type="REFORMAT">
-<attr name="transform"><![CDATA[//#CTL2
-
-// Transforms input record into output record.
-function integer transform() {
-	$out.0.id_materia = $in.0.id_materia;
-	$out.0.id_semestre = $in.0.id_semestre;
-	$out.0.id_estudiante = $in.0.id_estudiante;
-	$out.0.nota_definitiva = $in.0.nota_definitiva;
-
-	return ALL;
-}
-
-// Called during component initialization.
-// function boolean init() {}
-
-// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
-// required by the transform. All resources allocated within this method should be released
-// by the postExecute() method.
-// function void preExecute() {}
-
-// Called only if transform() throws an exception.
-// function integer transformOnError(string errorMessage, string stackTrace) {}
-
-// Called during each graph run after the entire transform was executed. Should be used to free any resources
-// allocated within the preExecute() method.
-// function void postExecute() {}
-
-// Called to return a user-defined error message when an error occurs.
-// function string getMessage() {}
-]]></attr>
-</Node>
 <Edge fromNode="DBINPUT_TABLE2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="REFORMAT2:0"/>
-<Edge fromNode="DBOUTPUT_TABLE2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge11" inPort="Port 0 (in)" outPort="Port 0 (rejected)" persistedImplicitMetadata="__dynamic_metadata_DBOUTPUT_TABLE2__outMetadata" toNode="REFORMAT4:0"/>
 <Edge fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata6" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE2:0"/>
-<Edge fromNode="REFORMAT4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata8" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE4:0"/>
 </Phase>
 <Phase number="1">
 <Node dbConnection="JDBC1" guiName="DBInputTable" guiX="50" guiY="47" id="DBINPUT_TABLE" type="DB_INPUT_TABLE">
